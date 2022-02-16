@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
-import Home from "./views/home";
-import Error from "./views/Error";
+import Home from "../pages/home";
+import Error from "../pages/Error";
 
 const Routers = () => {
 	return (
