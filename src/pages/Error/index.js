@@ -1,6 +1,13 @@
 import React from "react";
 
-const Home = () => {
+/* Custom style*/
+import "./index.css";
+import "@fontsource/playfair-display";
+
+/* Bootstap Style */
+import 'bootstrap/dist/css/bootstrap.css';
+
+const Error404 = () => {
 	return (
 		<div>
 			<h1>erro</h1>
@@ -8,4 +15,4 @@ const Home = () => {
 	);
 };
 
-export default Home;
+export default Error404;
