@@ -1,71 +1,61 @@
-import React from "react";
+import React from 'react'
+import '@fontsource/playfair-display'
 
-/* Custom style*/
-import "./index.css";
-import "@fontsource/playfair-display";
+import { ImGooglePlus3 } from 'react-icons/im'
+import { IconContext } from 'react-icons'
+import { BsFacebook } from 'react-icons/bs'
 
-/* icons */
-import { ImGooglePlus3 } from "react-icons/im";
-import { IconContext } from "react-icons";
-import { BsFacebook } from "react-icons/bs";
+import 'bootstrap/dist/css/bootstrap.css'
 
-/* Bootstap Style */
-import "bootstrap/dist/css/bootstrap.css";
+import { Form, Container } from 'reactstrap'
+import Footer from '../../components/template/footer'
 
-/* Components */
-import { Form, FormGroup, Input, Button } from "reactstrap";
-import Footer from "../../components/atoms/footer/";
+import * as C from './styles'
 
 const Login = () => {
-	return (
-		<div>
-			<div className="FormCentered">
-				<div style={{ marginTop: 120 }}>
-					<h1 className="text">Login</h1>
-				</div>
-				<Form style={{ marginTop: 61 }}>
-					<FormGroup>
-						<Input
-							id="email"
-							name="email"
-							placeholder="Type your Email"
-							type="email"
-						/>
-					</FormGroup>
-					<FormGroup style={{ marginTop: 29 }}>
-						<Input
-							id="password"
-							name="password"
-							placeholder="Type your password"
-							type="password"
-						/>
-					</FormGroup>
-				</Form>
-				<Button className="buttonEnter">Enter</Button>
-				<div style={{ marginTop: 80 }}>
-					<h1 className="text">Create new account</h1>
-					<h1 className="text" style={{ marginTop: 50 }}>
-						or
-					</h1>
-				</div>
-				<br />
-				<br />
-				<IconContext.Provider value={{ size: "69.73px" }}>
-					<div className="ButtonSocialCenter">
-						<Button className="FacebookSocialButton">
-							<BsFacebook />
-							Login with Facebook
-						</Button>
-						<Button className="GoogleSocialButton">
-							<ImGooglePlus3 />
-							Login with Google
-						</Button>
-					</div>
-				</IconContext.Provider>
-			</div>
-			<Footer />
-		</div>
-	);
-};
+  return (
+    <Container fluid style={{ margin: 0, padding: 0 }}>
+      <C.FormCentered>
+        <div style={{ marginTop: 120 }}>
+          <h1 className="text">Login</h1>
+        </div>
+        <Form style={{ marginTop: 61 }}>
+          <C.Input
+            id="email"
+            name="email"
+            placeholder="Type your Email"
+            type="email"
+          />
 
-export default Login;
+          <C.Input
+            id="password"
+            name="password"
+            placeholder="Type your password"
+            type="password"
+          />
+          <C.ButtonEnter>Enter</C.ButtonEnter>
+        </Form>
+
+        <C.SocialArea>
+          <h1 className="text">Create new account</h1>
+          <h1 className="text">or</h1>
+          <IconContext.Provider value={{ size: '69.73px' }}>
+            <div className="ButtonSocialCenter">
+              <C.FacebookSocialButton>
+                <BsFacebook size={60} color="white" className="adjustment" />
+                <span>Login with Facebook</span>
+              </C.FacebookSocialButton>
+              <C.GoogleSocialButton>
+                <ImGooglePlus3 size={60} color="white" className="adjustment" />
+                <span>Login with Google</span>
+              </C.GoogleSocialButton>
+            </div>
+          </IconContext.Provider>
+        </C.SocialArea>
+      </C.FormCentered>
+      <Footer />
+    </Container>
+  )
+}
+
+export default Login
