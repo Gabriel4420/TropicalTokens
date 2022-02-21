@@ -7,6 +7,9 @@ export const Container = styled.footer`
   justify-content: space-between;
   width: 100%;
   background-color: #333;
+  @media (max-width: 632px) {
+    flex-direction: column;
+  }
 `
 
 export const LeftArea = styled.div`
@@ -16,18 +19,35 @@ export const LeftArea = styled.div`
   justify-content: space-between;
   width: 100%;
   padding: 10px;
+  @media (max-width: 632px) {
+    align-items: center;
+  }
 `
 
-export const LeftAreaMenu = styled.div`
+export const ContentAreaMenu = styled.div`
   flex: 1;
+  font-size: 1.3rem;
+  display: flex;
+  flex-direction: column;
   padding: 20px;
+
+  a {
+    color: white;
+    text-decoration: none;
+    margin-bottom: 20px;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
 `
 
 export const LeftAreaMenuSocialIcons = styled.div`
   flex: 1;
   .adjustment {
-    margin-right: 10px;
+    margin-right: 20px;
   }
+  padding: 20px;
 `
 
 export const MediumArea = styled.div`
@@ -35,7 +55,7 @@ export const MediumArea = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
+  width: 50%;
   padding: 10px;
 `
 
@@ -46,4 +66,13 @@ export const RightArea = styled.div`
   justify-content: space-between;
   width: 100%;
   padding: 10px;
+  @media (max-width: 632px) {
+    align-items: center;
+  }
+`
+
+export const Logo = styled.img`
+  width: 100%;
+  max-width: 300px;
+  height: 100px;
 `

@@ -1,22 +1,37 @@
 import React from 'react'
 import { BsInstagram } from 'react-icons/bs'
 import { GrTwitter } from 'react-icons/gr'
+import { Link } from 'react-router-dom'
 import * as C from './styles'
 
 const Footer = () => (
   <C.Container>
     <C.LeftArea>
-      <C.LeftAreaMenu>
-        <div>Contact Us</div>
-        <div>About</div>
-      </C.LeftAreaMenu>
+      <C.ContentAreaMenu>
+        <Link to="/contact">Contact Us</Link>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://tropicaltokens.com/#start"
+        >
+          About
+        </a>
+      </C.ContentAreaMenu>
       <C.LeftAreaMenuSocialIcons>
-        <BsInstagram className="adjustment" />
-        <GrTwitter className="adjustment" />
+        <BsInstagram size={50} className="adjustment" />
+        <GrTwitter size={50} className="adjustment" />
       </C.LeftAreaMenuSocialIcons>
     </C.LeftArea>
-    <C.MediumArea>asdaf</C.MediumArea>
-    <C.RightArea>asdfasdf</C.RightArea>
+    <C.MediumArea>
+      <C.Logo src="/images/logo.png" />
+    </C.MediumArea>
+    <C.RightArea>
+      <C.ContentAreaMenu>
+        <Link to="/contact">Home</Link>
+        <Link to="/contact">Gallery</Link> 
+        <Link to="/contact">Users</Link>
+      </C.ContentAreaMenu>
+    </C.RightArea>
   </C.Container>
 )
 
