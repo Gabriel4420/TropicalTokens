@@ -1,16 +1,20 @@
 import React from "react";
 
 /* Custom style*/
-import "./index.css";
 import "@fontsource/playfair-display";
+import Navbar from "../../components/mols/navbar/";
+import Footer from '../../components/template/footer'
 
-/* Bootstap Style */
-import 'bootstrap/dist/css/bootstrap.css';
+import { Header, Img } from "./styles.js";
 
 const Home = () => {
 	return (
 		<div>
-			<h1>teste</h1>
+			<Navbar />
+			<Header>
+				<Img src="/images/art.png" />
+			</Header>
+			<Footer/>
 		</div>
 	);
 };

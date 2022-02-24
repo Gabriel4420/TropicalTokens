@@ -1,5 +1,3 @@
-<<<<<<< Updated upstream
-=======
 import React from "react";
 import "@fontsource/playfair-display";
 import {
@@ -49,4 +47,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
->>>>>>> Stashed changes
