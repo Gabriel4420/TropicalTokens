@@ -12,6 +12,7 @@ import Footer from '../../components/template/footer'
 import Navbar from "../../components/mols/navbar/"
 
 import * as C from './styles'
+import Button from '../../components/atoms/Button'
 
 const Login = () => {
   return (
@@ -35,24 +36,14 @@ const Login = () => {
             placeholder="Type your password"
             type="password"
           />
-          <C.ButtonEnter>Enter</C.ButtonEnter>
+          <Button contentButton="Entrar" radial={24}/>
         </Form>
 
         <C.SocialArea>
           <h1 className="text">Create new account</h1>
           <h1 className="text">or</h1>
-          <IconContext.Provider value={{ size: '69.73px' }}>
-            <div className="ButtonSocialCenter">
-              <C.FacebookSocialButton>
-                <BsFacebook size={60} color="white" className="adjustment" />
-                <span>Login with Facebook</span>
-              </C.FacebookSocialButton>
-              <C.GoogleSocialButton>
-                <ImGooglePlus3 size={60} color="white" className="adjustment" />
-                <span>Login with Google</span>
-              </C.GoogleSocialButton>
-            </div>
-          </IconContext.Provider>
+          <Button icon="ImGooglePlus3" contentButton="Entrar" radial={24}/>
+          <Button contentButton="Entrar" radial={24}/>
         </C.SocialArea>
       </C.FormCentered>
       <Footer />
