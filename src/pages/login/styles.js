@@ -32,18 +32,7 @@ export const Input = styled.input`
   font-size: 14px;
   padding-left: 20px;
 `
-export const ButtonEnter = styled.button`
-  width: 100%;
-  height: 80px;
-  margin-top: 22.93px;
-  font-size: 40px;
-  color: white;
-  /* Secondary effects*/
-  background: #70cc98;
-  border-color: #70cc98;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 8px;
-`
+
 export const GoogleSocialButton = styled.button`
   display: flex;
   width: 382px;
@@ -79,20 +68,7 @@ export const FacebookSocialButton = styled.button`
   border: 2px solid black;
   align-items: center;
 
-  span {
-    padding-left: 10px;
-    color: white;
-    font-size: 30px;
-  }
-
-  .adjustment {
-    margin-left: -6px;
-    margin-bottom: -2px;
-  }
-
-  &:hover {
-    filter: brightness(1.3);
-  }
+  
 `
 export const SocialArea = styled.div`
   padding: 80px;
