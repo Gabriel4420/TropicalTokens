@@ -9,6 +9,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 
 import { Form, Container } from 'reactstrap'
 import Footer from '../../components/template/footer'
+import Navbar from "../../components/mols/Navbar/"
 
 import * as C from './styles'
 import Button from '../../components/atoms/Button'
@@ -16,6 +17,7 @@ import Button from '../../components/atoms/Button'
 const Login = () => {
   return (
     <Container fluid style={{ margin: 0, padding: 0 }}>
+      <Navbar />
       <C.FormCentered>
         <div style={{ marginTop: 120 }}>
           <h1 className="text">Login</h1>

@@ -1,7 +1,6 @@
 import React from "react";
 
 /* Custom style*/
-import "./index.css";
 import "@fontsource/playfair-display";
 
 /* Bootstap Style */
