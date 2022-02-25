@@ -9,7 +9,7 @@ import {
 	Lupa,
 	Person,
 	IconAreas
-} from "../navbar/styles.js";
+} from "./styles.js";
 
 const Navbar = () => {
 	return (
