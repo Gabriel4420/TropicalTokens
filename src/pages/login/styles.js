@@ -43,12 +43,6 @@ export const GoogleSocialButton = styled.button`
   align-items: center;
   margin-top: 10px;
 
-  span {
-    padding-left: 10px;
-    color: white;
-    font-size: 34px;
-  }
-
   .adjustment {
     margin-left: -6px;
     margin-bottom: -2px;
@@ -67,8 +61,6 @@ export const FacebookSocialButton = styled.button`
   border-radius: 100px;
   border: 2px solid black;
   align-items: center;
-
-  
 `
 export const SocialArea = styled.div`
   padding: 80px;
@@ -77,4 +69,14 @@ export const SocialArea = styled.div`
   width: 100%;
   align-items: center;
   justify-content: center;
+
+  .text {
+    color: #70cc98;
+    font-size: 50px;
+    font-weight: 400;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 `

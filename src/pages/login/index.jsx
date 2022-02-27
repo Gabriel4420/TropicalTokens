@@ -2,11 +2,10 @@ import React from 'react'
 import '@fontsource/playfair-display'
 
 import { ImGooglePlus3 } from 'react-icons/im'
-import { IconContext } from 'react-icons'
 import { BsFacebook } from 'react-icons/bs'
 
 import 'bootstrap/dist/css/bootstrap.css'
-
+import { Link } from 'react-router-dom'
 import { Form, Container } from 'reactstrap'
 import Footer from '../../components/template/footer'
 import Navbar from '../../components/mols/NavBar'
@@ -40,12 +39,30 @@ const Login = () => {
         </Form>
 
         <C.SocialArea>
-          <h1 className="text">Create new account</h1>
-          <h1 className="text">or</h1>
-          <Button icon contentButton="Entrar" radial={10}>
-            <div>
-              <ImGooglePlus3 size={30} color="white" />
-            </div>
+          <Link className="text" to="/register">
+            Create new account
+          </Link>
+          <h1>or</h1>
+          <Button
+            type="button"
+            icon
+            contentButton="Entrar com Google"
+            radial={10}
+            bgColor="#fa3d3d"
+            width="30"
+          >
+            <ImGooglePlus3 size={30} color="white" />
+          </Button>
+          <Button
+            className="adjustment"
+            type="button"
+            icon
+            contentButton="Entrar com Facebook"
+            width="30"
+            radial={10}
+            bgColor="#1f83cb"
+          >
+            <BsFacebook size={30} color="white" />
           </Button>
         </C.SocialArea>
       </C.FormCentered>

@@ -1,11 +1,10 @@
 import styled from 'styled-components'
-import { NavLink as Link } from "react-router-dom";
 
 export const Container = styled.button`
-  width: 100%;
+  width: ${(props) => (props.width ? props.width : '100')}%;
   height: 80px;
   margin-top: 22.93px;
-  font-size: 40px;
+  font-size: 30px;
   color: white;
   background: ${(props) => (props.background ? props.background : '#70cc98')};
   border-color: ${(props) => (props.background ? props.background : '#70cc98')};
