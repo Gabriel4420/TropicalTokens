@@ -7,9 +7,12 @@ import { BsFacebook } from "react-icons/bs";
 
 import "bootstrap/dist/css/bootstrap.css";
 
-import { Form, Container } from "reactstrap";
-import Footer from "../../components/template/footer";
-import Navbar from "../../components/mols/Navbar/";
+
+
+import { Form, Container } from 'reactstrap'
+import Footer from '../../components/template/footer'
+import Navbar from "../../components/mols/NavBar"
+
 
 import * as C from "./styles";
 import Button from "../../components/atoms/Button";
