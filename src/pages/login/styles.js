@@ -80,3 +80,7 @@ export const SocialArea = styled.div`
     }
   }
 `
+
+export const LabelTitleLoginArea = styled.div`
+  margin-top: 30px;
+`

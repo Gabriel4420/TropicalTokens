@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import { Link } from 'react-router-dom'
 import { Form, Container } from 'reactstrap'
 import Footer from '../../components/template/footer'
-import Navbar from '../../components/mols/NavBar'
+
 
 import * as C from './styles'
 import Button from '../../components/atoms/Button'
@@ -16,11 +16,11 @@ import Button from '../../components/atoms/Button'
 const Login = () => {
   return (
     <Container fluid style={{ margin: 0, padding: 0 }}>
-      <Navbar />
+     
       <C.FormCentered>
-        <div style={{ marginTop: 120 }}>
+        <C.LabelTitleLoginArea>
           <h1 className="text">Login</h1>
-        </div>
+        </C.LabelTitleLoginArea>
         <Form style={{ marginTop: 61 }}>
           <C.Input
             id="email"
