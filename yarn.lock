@@ -5352,6 +5352,11 @@
   "resolved" "https://registry.npmjs.org/functional-red-black-tree/-/functional-red-black-tree-1.0.1.tgz"
   "version" "1.0.1"
 
+"fuse.js@^6.4.6":
+  "integrity" "sha512-sA5etGE7yD/pOqivZRBvUBd/NaL2sjAu6QuSaFoe1H2BrJSkH/T/UXAJ8CdXdw7DvY3Hs8CXKYkDWX7RiP5KOg=="
+  "resolved" "https://registry.npmjs.org/fuse.js/-/fuse.js-6.5.3.tgz"
+  "version" "6.5.3"
+
 "gensync@^1.0.0-beta.1", "gensync@^1.0.0-beta.2":
   "integrity" "sha512-3hN7NaskYvMDLQY55gnW3NQ+mesEAepTqlg+VEbj7zzqEMBVNhzcGYYeqFo/TlYz6eQiFcp1HcsCZO+nGgS8zg=="
   "resolved" "https://registry.npmjs.org/gensync/-/gensync-1.0.0-beta.2.tgz"
@@ -9276,6 +9281,16 @@
   optionalDependencies:
     "fsevents" "2.0.6"
 
+"react-search-box@^2.2.1":
+  "integrity" "sha512-8fRZmF8/xYCSDEtjUsvhB4rsP1NjdFx2cVOAjncjK89cUxntR7fzTp48JeWMY3FVr/MxaTHc6i0E39b6BAevYQ=="
+  "resolved" "https://registry.npmjs.org/react-search-box/-/react-search-box-2.2.1.tgz"
+  "version" "2.2.1"
+  dependencies:
+    "fuse.js" "^6.4.6"
+    "react" "^17.0.2"
+    "react-dom" "^17.0.2"
+    "styled-components" "^5.3.1"
+
 "react-social-login-buttons@^3.6.0":
   "integrity" "sha512-m5E72jHWgC4VBxRziZYQC5kQIzooGRF+dDE97K5JgSlcDPXkNxCjCzP+Qp9fNhNujG7APvPx2Qhzi1BO2xi17Q=="
   "resolved" "https://registry.npmjs.org/react-social-login-buttons/-/react-social-login-buttons-3.6.0.tgz"
@@ -10434,7 +10449,7 @@
     "loader-utils" "^1.1.0"
     "schema-utils" "^1.0.0"
 
-"styled-components@*", "styled-components@^5.3.3", "styled-components@>= 2", "styled-components@>=4.1.0 <6":
+"styled-components@*", "styled-components@^5.3.1", "styled-components@^5.3.3", "styled-components@>= 2", "styled-components@>=4.1.0 <6":
   "integrity" "sha512-++4iHwBM7ZN+x6DtPPWkCI4vdtwumQ+inA/DdAsqYd4SVgUKJie5vXyzotA00ttcFdQkCng7zc6grwlfIfw+lw=="
   "resolved" "https://registry.npmjs.org/styled-components/-/styled-components-5.3.3.tgz"
   "version" "5.3.3"
