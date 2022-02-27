@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 
 export const Container = styled.footer`
+  position: ${props => props.pos == "home" ? "fixed": "relative"};
+  bottom: 0;
   display: flex;
   color: white;
   align-items: center;

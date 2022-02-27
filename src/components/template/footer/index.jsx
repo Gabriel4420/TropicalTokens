@@ -4,8 +4,8 @@ import { GrTwitter } from 'react-icons/gr'
 import { Link } from 'react-router-dom'
 import * as C from './styles'
 
-const Footer = () => (
-  <C.Container>
+const Footer = ({pos}) => (
+  <C.Container pos={pos}>
     <C.LeftArea>
       <C.ContentAreaMenu>
         <Link to="/contact">Contact Us</Link>

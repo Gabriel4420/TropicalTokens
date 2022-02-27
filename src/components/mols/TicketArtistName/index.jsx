@@ -8,15 +8,21 @@ import {
 } from "./styles";
 import { UserAvatar } from "../../atoms/UserAvatar";
 
-const TicketArtistName = () => {
+const TicketArtistName = (
+	{
+		titleArtist,
+		createBy
+	}
+) => {
 	return (
-		<Background>
+		<Background createBy = {createBy}>
+			<h3>{createBy}</h3>
 			<Container>
 				<TrendAvatarArea>
 					<UserAvatar src="/images/leo.png" />
 				</TrendAvatarArea>
-				<UsernameTittleArea>
-					<h3>@leo</h3>
+				<UsernameTittleArea titleArtist = {titleArtist}>
+					<h3>{titleArtist}</h3>
 				</UsernameTittleArea>
 			</Container>
 		</Background>

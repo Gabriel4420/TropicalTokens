@@ -8,38 +8,37 @@ import {
 	NavMenu,
 	Lupa,
 	Person,
-	IconAreas
+	IconAreas,
 } from "./styles.js";
 
 const Navbar = () => {
+	const menu = [
+		{ titulo: "Home", to: "/" },
+		{ titulo: "Gallery", to: "/gallery" },
+		{ titulo: "Users", to: "/users" },
+		{ titulo: "About", to: "/about" },
+	];
 	return (
 		<div>
 			<Nav>
-				<div style = {{width: "100%", padding: 5}}>
-				<NavLogo src="/images/logo_nav.svg" />
+				<div className="NavLogoArea">
+					<NavLogo src="/images/logo_nav.svg" />
 				</div>
 				<Bars />
 				<NavMenu>
-					<NavLink to="/" activeStyle={{ color: "black" }}>
-						Home
-					</NavLink>
-					<NavLink to="/" activeStyle={{ color: "black" }}>
-						Gallery
-					</NavLink>
-					<NavLink to="/" activeStyle={{ color: "black" }}>
-						Users
-					</NavLink>
-					<NavLink to="/" activeStyle={{ color: "black" }}>
-						About
-					</NavLink>
+					{menu.map((item, index) => (
+						<NavLink key={index} to={item.to}>
+							{item.titulo}
+						</NavLink>
+					))}
 				</NavMenu>
 				<IconAreas>
-				<NavLink to="/" activeStyle={{ color: "black" }}>
+					<NavLink to="/">
 						<Lupa />
 					</NavLink>
-					<NavLink to="/" activeStyle={{ color: "black" }}>
+					<NavLink to="/">
 						<Person />
-				</NavLink>
+					</NavLink>
 				</IconAreas>
 			</Nav>
 		</div>

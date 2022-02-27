@@ -12,7 +12,7 @@ const Home = () => {
 		<>
 			<Navbar />
 			<TrendArtist />
-			<Footer />
+			<Footer pos="home"/>
 		</>
 	);
 };
