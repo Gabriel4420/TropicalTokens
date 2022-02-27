@@ -1,9 +1,15 @@
 import styled from "styled-components";
 
 export const SearchArea = styled.div`
- width: 100%;
- display: flex;
- justify-content: center;
- align-items: center;
- margin-top: 10px;
+ width: 600px;
+ margin-left: auto;
+ margin-right: auto;
+`;
+
+export const TableArea = styled.div`
+  margin: 1em;
+  text-align: center;
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 `;
