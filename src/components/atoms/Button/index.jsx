@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Container } from './styles'
 
-const Button = ({ contentButton, radial, icon=true, bgColor, props }) => {
+const Button = (props) => {
   const [hasIcon, setHasIcon] = useState(false)
 
   const handleIcon = () => {
@@ -9,15 +9,17 @@ const Button = ({ contentButton, radial, icon=true, bgColor, props }) => {
   }
 
   return (
-    <Container
-      icon={icon && handleIcon}
-      borderRadius={radial}
-      contentButton={contentButton}
-      background={bgColor}>
-    
-      {hasIcon && props.children}
-      {contentButton}
-    </Container>
+    <>
+      <Container
+        icon={props.icon && handleIcon}
+        borderRadius={props.radial}
+        contentButton={props.contentButton}
+        background={props.bgColor}
+      >
+        {hasIcon && <div>{props.children}</div>}
+        {props.contentButton}
+      </Container>
+    </>
   )
 }
 

@@ -19,10 +19,10 @@ const Navbar = () => {
 		{ titulo: "About", to: "/about" },
 	];
 	return (
-		<div>
+		<div style={{padding:20}}>
 			<Nav>
 				<div className="NavLogoArea">
-					<NavLogo src="/images/logo_nav.svg" />
+					<NavLogo src="/images/logo_tropical.png" />
 				</div>
 				<Bars />
 				<NavMenu>
