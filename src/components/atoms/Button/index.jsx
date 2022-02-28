@@ -1,23 +1,20 @@
 import React, { useState } from 'react'
 import { Container } from './styles'
 
-const Button = ({ contentButton, radial, icon=true, bgColor, props }) => {
-  const [hasIcon, setHasIcon] = useState(false)
-
-  const handleIcon = () => {
-    setHasIcon(true)
-  }
-
+const Button = (props) => {
   return (
-    <Container
-      icon={icon && handleIcon}
-      borderRadius={radial}
-      contentButton={contentButton}
-      background={bgColor}>
-    
-      {hasIcon && props.children}
-      {contentButton}
-    </Container>
+    <>
+      <Container
+        icon={props.icon}
+        borderRadius={props.radial}
+        contentButton={props.contentButton}
+        background={props.bgColor}
+        width={props.width}
+      >
+        {props.icon == true && props.children}
+        <span className="adjustment"></span> {props.contentButton}
+      </Container>
+    </>
   )
 }
 

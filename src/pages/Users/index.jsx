@@ -2,6 +2,8 @@ import React from "react";
 import { SearchArea, TableArea } from "./styles";
 import Navbar from "../../components/mols/NavBar";
 import Footer from "../../components/template/footer";
+import Input from "../../components/atoms/Input";
+
 import "bootstrap/dist/css/bootstrap.css";
 import { Table } from "reactstrap";
 import Input from "../../components/atoms/Input";
