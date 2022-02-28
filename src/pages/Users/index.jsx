@@ -6,7 +6,6 @@ import Input from "../../components/atoms/Input";
 
 import "bootstrap/dist/css/bootstrap.css";
 import { Table } from "reactstrap";
-import Input from "../../components/atoms/Input";
 import { FcSearch } from "react-icons/fc";
 
 const Users = () => {
