@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
-export const p = styled.div`
-
-`
+export const TropicalTokenArea = styled.div`
+	padding: 20px;
+	text-align: center;
+`;
