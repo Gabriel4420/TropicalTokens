@@ -4,7 +4,7 @@ import { ContainerInput, InputBar } from "./styles";
 const Input = (props) => {
 	return (
 		<ContainerInput icon={props.icon}>
-			{props.icon && props.children}
+			{props.icon && <div>{props.children}</div>}
 			<InputBar mode={props.mode} />
 		</ContainerInput>
 	);
