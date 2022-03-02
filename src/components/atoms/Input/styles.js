@@ -25,5 +25,5 @@ export const InputBar = styled.input`
 	}};
 	width: 100%;
 	box-shadow: 5px 5px 5px grey;
-	padding-left: 30px;
+	padding-left: 50px;
 `;
