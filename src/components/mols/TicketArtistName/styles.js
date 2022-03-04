@@ -36,7 +36,7 @@ export const UsernameTittleArea = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  margin-left: 80px;
+  margin-left: -100px;
   h3 {
     font-weight: bold;
   }
