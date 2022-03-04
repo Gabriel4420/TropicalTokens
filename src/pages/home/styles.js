@@ -16,4 +16,12 @@ export const AboutArea = styled.div`
   a:hover {
     text-decoration: underline;
   }
+
+  @media (min-width: 300px) and (max-width: 700px) {
+    flex-direction: column;
+
+   .logo {
+      padding-bottom: 50px;
+    }
+  }
 `
