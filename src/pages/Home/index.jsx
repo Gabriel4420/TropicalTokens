@@ -1,6 +1,6 @@
 import React from 'react'
 import '@fontsource/playfair-display'
-import Header from '../../components/template/Header'
+import Header from '../../components/mols/Headerader'
 import Footer from '../../components/template/Footer'
 import TrendArtist from '../../components/mols/TrendArtist'
 import { Col } from 'reactstrap'
