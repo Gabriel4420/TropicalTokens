@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Container } from './styles'
 
 const Button = (props) => {
@@ -11,7 +11,7 @@ const Button = (props) => {
         background={props.bgColor}
         width={props.width}
       >
-        {props.icon == true && props.children}
+        {props.icon === true && props.children}
         <span className="adjustment"></span> {props.contentButton}
       </Container>
     </>

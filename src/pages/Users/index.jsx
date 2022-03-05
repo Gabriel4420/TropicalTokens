@@ -1,7 +1,7 @@
 import React from 'react'
 import { SearchArea, TableArea } from './styles'
-import Navbar from '../../components/mols/NavBar'
-import Footer from '../../components/template/footer'
+import Header from '../../components/template/Header'
+import Footer from '../../components/template/Footer'
 import Input from '../../components/atoms/Input'
 
 import 'bootstrap/dist/css/bootstrap.css'
@@ -11,7 +11,7 @@ import { FcSearch } from 'react-icons/fc'
 const Users = () => {
   return (
     <div>
-      <Navbar />
+      <Header isMobile />
       <h2
         style={{
           textAlign: 'center',

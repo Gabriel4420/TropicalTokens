@@ -10,7 +10,7 @@ import {
   IconAreas,
 } from './styles.js'
 
-const Navbar = () => {
+const Header = () => {
   const menu = [
     { titulo: 'Home', to: '/' },
     { titulo: 'Gallery', to: '/gallery' },
@@ -59,4 +59,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default Header
