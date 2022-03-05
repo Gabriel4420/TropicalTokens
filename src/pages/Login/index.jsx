@@ -7,7 +7,7 @@ import { BsFacebook } from 'react-icons/bs'
 import 'bootstrap/dist/css/bootstrap.css'
 import { Link } from 'react-router-dom'
 import { Form, Container } from 'reactstrap'
-import Footer from '../../components/template/footer'
+import Footer from '../../components/template/Footer'
 
 
 import * as C from './styles'

@@ -25,3 +25,8 @@ export const AboutArea = styled.div`
     }
   }
 `
+
+export const LogoAboutArea = styled.div`
+padding-right:50px;
+
+` 
