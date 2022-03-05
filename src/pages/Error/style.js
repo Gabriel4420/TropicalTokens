@@ -60,5 +60,9 @@ export const Content = styled.div`
 		padding: 8px 14px;
 		border-radius: 4px;
 		cursor: pointer;
+		text-decoration: none;
+	}
+	a:hover {
+		text-decoration: underline;
 	}
 `;
