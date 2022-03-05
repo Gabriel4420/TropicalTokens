@@ -26,7 +26,7 @@ const Home = () => {
 					<p>
 						Tropical Tokens is the backbone of content development between
 						creators, digitality, and supporters of all kinds.
-						Digital-tropicality is multiplicity, synergy and abundance. It’s
+						Digital-tropicality is multiplicity, synergy and abundance. It's
 						feasibility.
 					</p>
 					<a
