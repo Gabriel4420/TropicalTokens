@@ -11,6 +11,7 @@ const Home = () => {
     <>
       <Header isMobile />
       <TrendArtist />
+      
       <AboutArea>
         <LogoAboutArea >
           <img
