@@ -1,16 +1,24 @@
 import React from "react";
 
-/* Custom style*/
+/* Custom font*/
 import "@fontsource/playfair-display";
 
 /* Bootstap Style */
-import 'bootstrap/dist/css/bootstrap.css';
+import "bootstrap/dist/css/bootstrap.css";
+import { Content, Page } from "./style";
+
+import { Link } from "react-router-dom";
 
 const Error404 = () => {
 	return (
-		<div>
-			<h1>erro</h1>
-		</div>
+		<Content>
+			<Page>
+				<h1>404</h1>
+				<h2>Page not found</h2>
+				<p>Looks like there was no beach today</p>
+				<Link to="/">back to home</Link>
+			</Page>
+		</Content>
 	);
 };
 
