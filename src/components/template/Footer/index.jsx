@@ -27,9 +27,9 @@ const Footer = ({pos}) => (
     </C.MediumArea>
     <C.RightArea>
       <C.ContentAreaMenu>
-        <Link to="/contact">Home</Link>
-        <Link to="/contact">Gallery</Link> 
-        <Link to="/contact">Users</Link>
+        <Link to="/">Home</Link>
+        <Link to="/gallery">Gallery</Link> 
+        <Link to="/users">Users</Link>
       </C.ContentAreaMenu>
     </C.RightArea>
   </C.Container>
