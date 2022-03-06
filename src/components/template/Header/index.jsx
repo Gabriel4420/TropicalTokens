@@ -12,13 +12,15 @@ import {
 
 const Header = () => {
   const menu = [
-    { titulo: 'Home', to: '/' },
-    { titulo: 'Gallery', to: '/gallery' },
-    { titulo: 'Users', to: '/users' },
-    { titulo: 'About', to: '/about' },
+    { titulo: 'Home', to: '/', type: 'NavLink' },
+    { titulo: 'Gallery', to: '/gallery', type: 'NavLink' },
+    { titulo: 'Users', to: '/users', type: 'NavLink' },
+    { titulo: 'About', to: 'https://tropicaltokens.com/#start', type: 'a' },
   ]
+
   const [isMobile, setIsMobile] = useState(false)
   const [isActive, setIsActive] = useState(false)
+ 
 
   const handleActive = () => {
     setIsMobile(true)
@@ -31,27 +33,52 @@ const Header = () => {
           <NavLogo src="/images/logo_tropical.png" />
         </div>
         <Bars onClick={handleActive} />
+
         {isMobile ? (
           <NavMenu active={isActive}>
-            {menu.map((item, index) => (
-              <NavLink key={index} to={item.to}>
-                {item.titulo}
-              </NavLink>
-            ))}
+            {menu.map((item, key) =>
+              item.type === 'a' ? (
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  key={key}
+                  href={item.to}
+                  className="link"
+                >
+                  {item.titulo}
+                </a>
+              ) : (
+                <NavLink key={key} to={item.to}>
+                  {item.titulo}
+                </NavLink>
+              ),
+            )}
           </NavMenu>
         ) : (
           <NavMenu>
-            {menu.map((item, index) => (
-              <NavLink key={index} to={item.to}>
-                {item.titulo}
-              </NavLink>
-            ))}
+            {menu.map((item, key) =>
+              item.type === 'a' ? (
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  key={key}
+                  href={item.to}
+                  className="link"
+                >
+                  {item.titulo}
+                </a>
+              ) : (
+                <NavLink key={key} to={item.to}>
+                  {item.titulo}
+                </NavLink>
+              ),
+            )}
           </NavMenu>
         )}
 
         <IconAreas>
           <NavLink to="/">
-            <Person />
+            <Person className='person' />
           </NavLink>
         </IconAreas>
       </Nav>

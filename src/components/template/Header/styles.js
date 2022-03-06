@@ -43,9 +43,18 @@ export const NavLink = styled(Link)`
   cursor: pointer;
   &:hover {
     font-weight: bold;
+    color: black;
   }
   @media screen and (max-width: 768px) {
     color: white;
+    &:hover {
+      font-weight: bold;
+      color: white;
+    }
+    .person {
+      color: black;
+      margin-top: -40px;
+    }
   }
 `
 
@@ -71,6 +80,17 @@ export const NavMenu = styled.div`
   width: 100%;
   justify-content: center;
 
+  .link {
+    text-decoration: none;
+    color: black;
+    margin-left: 30px;
+  }
+
+  .link:hover {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
   @media screen and (max-width: 768px) {
     display: ${(props) => (props.active ? 'flex' : 'none')};
     flex-direction: column;
@@ -80,19 +100,27 @@ export const NavMenu = styled.div`
     top: 60px;
     width: 30%;
     height: 200px;
-  }
-`
 
-export const Lupa = styled(MagnifyingGlass)`
-  width: 20px;
-  height: 20px;
-  cursor: pointer;
+    .link {
+      text-decoration: none;
+      color: white;
+      margin-bottom: 20px;
+      margin-top: 10px;
+      margin-left: 0px;
+    }
+  }
 `
 
 export const Person = styled(PersonCircle)`
   width: 20px;
   height: 20px;
   cursor: pointer;
+
+  @media screen and (max-width: 768px) {
+    .person {
+      color: black;
+    }
+  }
 `
 
 export const IconAreas = styled.div`
