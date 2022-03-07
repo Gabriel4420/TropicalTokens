@@ -1,11 +1,12 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  max-width: 15vw;
+  max-width: 75vw;
 `
 
 export const CarrouselSlider = styled.div`
   display: flex;
+  width: 100%;
 `
 
 export const ItemSlider = styled.div`
@@ -25,7 +26,12 @@ export const ArtPhoto = styled.img`
   object-fit: cover;
 `
 
-export const TitleArea = styled.div``
+export const TitleArea = styled.div`
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+`
 
 export const Title = styled.h2`
   font-weight: bold;
@@ -45,7 +51,7 @@ export const QuantityAvailable = styled.p`
 
 export const DescriptionArea = styled.div`
   display: flex;
-  
+
   width: 100%;
   justify-content: center;
   align-items: center;

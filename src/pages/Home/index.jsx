@@ -4,7 +4,13 @@ import Header from '../../components/template/Header'
 import Footer from '../../components/template/Footer'
 import TrendArtist from '../../components/mols/TrendArtist'
 import { Col } from 'reactstrap'
-import { AboutArea, LogoAboutArea, AreaCarrousel } from './styles'
+import {
+  AboutArea,
+  LogoAboutArea,
+  AreaCarrousel,
+  CarrouselSection,
+  TrendArtistArea,
+} from './styles'
 import Carrousel from '../../components/organism/Carrousel'
 import { MdNavigateNext, MdNavigateBefore } from 'react-icons/md'
 const Home = () => {
@@ -14,9 +20,11 @@ const Home = () => {
 
   const handleNextPage = () => {
     setNextPage(nextPage + 3)
+    setBeforePage(nextPage - 1)
   }
   const handleBeforePage = () => {
-    setBeforePage(nextPage - 1)
+    setBeforePage(beforePage - 3)
+    setNextPage(nextPage - 3)
   }
   const data = [
     {
@@ -67,30 +75,63 @@ const Home = () => {
       quantityAvailable: '20/100',
       description: 'bla bla bla bla bla bla açlskdjfçasldkjfçasldkfjasçldkfj',
     },
+    {
+      title: 'Galaxy',
+      artPath:
+        'https://media.istockphoto.com/photos/background-of-galaxy-and-stars-picture-id1035676256?b=1&k=20&m=1035676256&s=170667a&w=0&h=NOtiiFfDhhUhZgQ4wZmHPXxHvt3RFVD-lTmnWCeyIG4=',
+      quantityAvailable: '20/100',
+      description: 'bla bla bla bla bla bla açlskdjfçasldkjfçasldkfjasçldkfj',
+    },
+    {
+      title: 'Galaxy',
+      artPath:
+        'https://media.istockphoto.com/photos/background-of-galaxy-and-stars-picture-id1035676256?b=1&k=20&m=1035676256&s=170667a&w=0&h=NOtiiFfDhhUhZgQ4wZmHPXxHvt3RFVD-lTmnWCeyIG4=',
+      quantityAvailable: '20/100',
+      description: 'bla bla bla bla bla bla açlskdjfçasldkjfçasldkfjasçldkfj',
+    },
+    {
+      title: 'Galaxy',
+      artPath:
+        'https://media.istockphoto.com/photos/background-of-galaxy-and-stars-picture-id1035676256?b=1&k=20&m=1035676256&s=170667a&w=0&h=NOtiiFfDhhUhZgQ4wZmHPXxHvt3RFVD-lTmnWCeyIG4=',
+      quantityAvailable: '20/100',
+      description: 'bla bla bla bla bla bla açlskdjfçasldkjfçasldkfjasçldkfj',
+    },
   ]
   return (
     <>
       <Header isMobile />
-      <TrendArtist />
-      <AreaCarrousel>
-        {data.slice(beforePage, nextPage).map((item, key) => {
-          const { title, artPath, quantityAvailable, description } = item
-          return (
-            <Carrousel
-              title={title}
-              artPath={artPath}
-              quantityAvailable={quantityAvailable}
-              carrouselRef={carrouselRef}
-              key={key}
-              description={description}
-            />
-          )
-        })}
-        <div>
-          <MdNavigateNext onClick={handleNextPage} />
-          <MdNavigateBefore onClick={handleBeforePage} />
+      <TrendArtistArea>
+        <TrendArtist />
+      </TrendArtistArea>
+
+      <CarrouselSection>
+        <div className="titleTrends">
+          <h3>Trends</h3>
         </div>
-      </AreaCarrousel>
+        <AreaCarrousel>
+          <div className="before">
+            <MdNavigateBefore size={50} onClick={handleBeforePage} />
+          </div>
+          {data.slice(beforePage, nextPage).map((item, key) => {
+            console.log(beforePage, nextPage)
+            console.log(data.length)
+            const { title, artPath, quantityAvailable, description } = item
+            return (
+              <Carrousel
+                title={title}
+                artPath={artPath}
+                quantityAvailable={quantityAvailable}
+                carrouselRef={carrouselRef}
+                key={key}
+                description={description}
+              />
+            )
+          })}
+          <div className="before">
+            <MdNavigateNext size={50} onClick={handleNextPage} />
+          </div>
+        </AreaCarrousel>
+      </CarrouselSection>
 
       <AboutArea>
         <LogoAboutArea>
