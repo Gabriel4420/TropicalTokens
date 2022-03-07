@@ -20,13 +20,22 @@ export const AboutArea = styled.div`
   @media (min-width: 300px) and (max-width: 700px) {
     flex-direction: column;
 
-   .logo {
+    .logo {
       padding-bottom: 50px;
     }
   }
 `
 
 export const LogoAboutArea = styled.div`
-padding-right:50px;
-
-` 
+  padding-right: 50px;
+`
+export const AreaCarrousel = styled.div`
+  display: flex;
+  padding: 40px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  width: 100%;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+`
