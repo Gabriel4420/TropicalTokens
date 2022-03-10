@@ -12,7 +12,8 @@ import {
   TrendArtistArea,
 } from './styles'
 import Carrousel from '../../components/organism/Carrousel'
-import { MdNavigateNext, MdNavigateBefore } from 'react-icons/md'
+import Carousel from 'react-elastic-carousel'
+
 const Home = () => {
   const carrouselRef = useRef(null)
   const [nextPage, setNextPage] = useState(4)
@@ -82,20 +83,6 @@ const Home = () => {
       quantityAvailable: '20/100',
       description: 'bla bla bla bla bla bla açlskdjfçasldkjfçasldkfjasçldkfj',
     },
-    {
-      title: 'Galaxy',
-      artPath:
-        'https://media.istockphoto.com/photos/background-of-galaxy-and-stars-picture-id1035676256?b=1&k=20&m=1035676256&s=170667a&w=0&h=NOtiiFfDhhUhZgQ4wZmHPXxHvt3RFVD-lTmnWCeyIG4=',
-      quantityAvailable: '20/100',
-      description: 'bla bla bla bla bla bla açlskdjfçasldkjfçasldkfjasçldkfj',
-    },
-    {
-      title: 'Galaxy',
-      artPath:
-        'https://media.istockphoto.com/photos/background-of-galaxy-and-stars-picture-id1035676256?b=1&k=20&m=1035676256&s=170667a&w=0&h=NOtiiFfDhhUhZgQ4wZmHPXxHvt3RFVD-lTmnWCeyIG4=',
-      quantityAvailable: '20/100',
-      description: 'bla bla bla bla bla bla açlskdjfçasldkjfçasldkfjasçldkfj',
-    },
   ]
   return (
     <>
@@ -103,18 +90,21 @@ const Home = () => {
       <TrendArtistArea>
         <TrendArtist />
       </TrendArtistArea>
-
       <CarrouselSection>
-        <div className="titleTrends">
-          <h3>Trends</h3>
-        </div>
-        <AreaCarrousel>
-          <div className="before">
-            <MdNavigateBefore size={50} onClick={handleBeforePage} />
-          </div>
-          {data.slice(beforePage, nextPage).map((item, key) => {
-            console.log(beforePage, nextPage)
-            console.log(data.length)
+        <Carousel
+          itemsToShow={2}
+          itemsToScroll={2}
+          
+          enableTilt
+          
+          easing="cubic-bezier(1,.15,.55,1.54)"
+          tiltEasing="cubic-bezier(0.110, 1, 1.000, 0.210)"
+          transitionMs={1000}
+          initialFirstItem={0}
+        
+        >
+          {data.map((item, key) => {
+
             const { title, artPath, quantityAvailable, description } = item
             return (
               <Carrousel
@@ -127,11 +117,23 @@ const Home = () => {
               />
             )
           })}
+        </Carousel>
+      </CarrouselSection>
+
+      {/* <CarrouselSection>
+        <div className="titleTrends">
+          <h3>Trends</h3>
+        </div>
+        <AreaCarrousel>
+          <div className="before">
+            <MdNavigateBefore size={50} onClick={handleBeforePage} />
+          </div>
+          
           <div className="before">
             <MdNavigateNext size={50} onClick={handleNextPage} />
           </div>
         </AreaCarrousel>
-      </CarrouselSection>
+       */}
 
       <AboutArea>
         <LogoAboutArea>

@@ -57,6 +57,26 @@ export const CarrouselSection = styled.div`
     justify-content: center;
     width: 100%;
   }
+
+  .rec.rec-arrow {
+    color: #333;
+    background-color: transparent;
+    border: none !important;
+    box-shadow: none;
+  }
+
+  .rec.rec-arrow:hover {
+    color: #333;
+    box-shadow: none;
+    background-color: transparent;
+  }
+
+  .rec.rec-dot {
+    background-color: #ccc;
+    border: none;
+  }
+
+  .rec.rec-dot
 `
 
 export const TrendArtistArea = styled.div`

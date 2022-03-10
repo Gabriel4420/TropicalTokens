@@ -11,8 +11,8 @@ export const CarrouselSlider = styled.div`
 
 export const ItemSlider = styled.div`
   background-color: white;
-  margin: 10px;
-  padding: 10px;
+ 
+  
   width: 280px;
   border-radius: 16px;
   flex: none;
