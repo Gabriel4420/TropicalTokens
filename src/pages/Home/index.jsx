@@ -91,6 +91,9 @@ const Home = () => {
         <TrendArtist />
       </TrendArtistArea>
       <CarrouselSection>
+      <div className="titleTrends">
+          <h3>Trends</h3>
+        </div>
         <Carousel
           itemsToShow={2}
           itemsToScroll={2}
@@ -121,9 +124,7 @@ const Home = () => {
       </CarrouselSection>
 
       {/* <CarrouselSection>
-        <div className="titleTrends">
-          <h3>Trends</h3>
-        </div>
+        
         <AreaCarrousel>
           <div className="before">
             <MdNavigateBefore size={50} onClick={handleBeforePage} />

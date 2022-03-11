@@ -15,7 +15,7 @@ const Header = () => {
     { titulo: 'Home', to: '/', type: 'NavLink' },
     { titulo: 'Gallery', to: '/gallery', type: 'NavLink' },
     { titulo: 'Users', to: '/users', type: 'NavLink' },
-    { titulo: 'About', to: 'https://tropicaltokens.com/#start', type: 'a' },
+    { titulo: 'About', to: 'https://tropicaltokens.com/#mission', type: 'a' },
   ]
 
   const [isMobile, setIsMobile] = useState(false)

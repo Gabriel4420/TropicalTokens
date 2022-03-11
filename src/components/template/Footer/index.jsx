@@ -12,7 +12,7 @@ const Footer = ({pos}) => (
         <a
           target="_blank"
           rel="noopener noreferrer"
-          href="https://tropicaltokens.com/#start"
+          href="https://tropicaltokens.com/#mission"
         >
           About
         </a>
