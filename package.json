@@ -20,7 +20,9 @@
     "react-router-dom": "^6.2.1",
     "react-scripts": "^3.0.1",
     "reactstrap": "^9.0.1",
+    "serialize-javascript": "^1.9.1",
     "styled-components": "^5.3.3",
+    "terser-webpack-plugin": "^1.2.3",
     "web-vitals": "^2.1.4",
     "webpack-dev-server": "^3.2.1"
   },
