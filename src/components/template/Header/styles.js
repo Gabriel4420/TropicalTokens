@@ -1,8 +1,7 @@
 import { FaBars } from 'react-icons/fa'
 import { NavLink as Link } from 'react-router-dom'
 import styled from 'styled-components'
-import { MagnifyingGlass } from '@styled-icons/open-iconic/MagnifyingGlass'
-import { PersonCircle } from '@styled-icons/bootstrap/PersonCircle'
+import {BsPersonCircle} from "react-icons/bs"
 
 export const Nav = styled.nav`
   background: white;
@@ -113,7 +112,7 @@ export const NavMenu = styled.div`
   }
 `
 
-export const Person = styled(PersonCircle)`
+export const Person = styled(BsPersonCircle)`
   width: 20px;
   height: 20px;
   cursor: pointer;
