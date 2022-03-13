@@ -16,17 +16,7 @@ import Carousel from 'react-elastic-carousel'
 
 const Home = () => {
   const carrouselRef = useRef(null)
-  const [nextPage, setNextPage] = useState(4)
-  const [beforePage, setBeforePage] = useState(0)
-
-  const handleNextPage = () => {
-    setNextPage(nextPage + 3)
-    setBeforePage(nextPage - 1)
-  }
-  const handleBeforePage = () => {
-    setBeforePage(beforePage - 3)
-    setNextPage(nextPage - 3)
-  }
+  
   const data = [
     {
       title: 'Bambos a la playa',
@@ -94,6 +84,7 @@ const Home = () => {
       <div className="titleTrends">
           <h3>Trends</h3>
         </div>
+        <AreaCarrousel>
         <Carousel
           itemsToShow={2}
           itemsToScroll={2}
@@ -121,20 +112,8 @@ const Home = () => {
             )
           })}
         </Carousel>
-      </CarrouselSection>
-
-      {/* <CarrouselSection>
-        
-        <AreaCarrousel>
-          <div className="before">
-            <MdNavigateBefore size={50} onClick={handleBeforePage} />
-          </div>
-          
-          <div className="before">
-            <MdNavigateNext size={50} onClick={handleNextPage} />
-          </div>
         </AreaCarrousel>
-       */}
+      </CarrouselSection>
 
       <AboutArea>
         <LogoAboutArea>
