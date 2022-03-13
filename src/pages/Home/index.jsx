@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, {  useRef } from 'react'
 import '@fontsource/playfair-display'
 import Header from '../../components/template/Header'
 import Footer from '../../components/template/Footer'
@@ -16,7 +16,7 @@ import Carousel from 'react-elastic-carousel'
 
 const Home = () => {
   const carrouselRef = useRef(null)
-  
+
   const data = [
     {
       title: 'Bambos a la playa',
@@ -81,37 +81,38 @@ const Home = () => {
         <TrendArtist />
       </TrendArtistArea>
       <CarrouselSection>
-      <div className="titleTrends">
+        <div className="titleTrends">
           <h3>Trends</h3>
         </div>
         <AreaCarrousel>
-        <Carousel
-          itemsToShow={2}
-          itemsToScroll={2}
-          
-          enableTilt
-          
-          easing="cubic-bezier(1,.15,.55,1.54)"
-          tiltEasing="cubic-bezier(0.110, 1, 1.000, 0.210)"
-          transitionMs={1000}
-          initialFirstItem={0}
-        
-        >
-          {data.map((item, key) => {
-
-            const { title, artPath, quantityAvailable, description } = item
-            return (
-              <Carrousel
-                title={title}
-                artPath={artPath}
-                quantityAvailable={quantityAvailable}
-                carrouselRef={carrouselRef}
-                key={key}
-                description={description}
-              />
-            )
-          })}
-        </Carousel>
+          <Carousel
+            breakPoints={[
+              { width: 1, itemsToShow: 1 },
+              { width: 550, itemsToShow: 2, itemsToScroll: 2 },
+              { width: 768, itemsToShow: 3 },
+              { width: 1129, itemsToShow: 2 },
+              { width: 1200, itemsToShow: 4 },
+            ]}
+            enableTilt
+            easing="cubic-bezier(1,.15,.55,1.54)"
+            tiltEasing="cubic-bezier(0.110, 1, 1.000, 0.210)"
+            transitionMs={1000}
+            initialFirstItem={0}
+          >
+            {data.map((item, key) => {
+              const { title, artPath, quantityAvailable, description } = item
+              return (
+                <Carrousel
+                  title={title}
+                  artPath={artPath}
+                  quantityAvailable={quantityAvailable}
+                  carrouselRef={carrouselRef}
+                  key={key}
+                  description={description}
+                />
+              )
+            })}
+          </Carousel>
         </AreaCarrousel>
       </CarrouselSection>
 

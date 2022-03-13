@@ -34,7 +34,7 @@ export const AreaCarrousel = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-
+  padding: 80px;
   overflow-x: auto;
   scroll-behavior: smooth;
   width: 100%;
