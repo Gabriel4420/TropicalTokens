@@ -77,7 +77,7 @@ const Header = () => {
         )}
 
         <IconAreas>
-          <NavLink to="/">
+          <NavLink to="/login">
             <Person className='person' />
           </NavLink>
         </IconAreas>
