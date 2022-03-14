@@ -20,6 +20,7 @@
     "core-js-compat": "^3.21.1",
     "create-react-app": "^5.0.0",
     "css-select": "^4.2.1",
+    "datocms-client": "^3.5.15",
     "fast-glob": "^3.2.11",
     "glob-parent": "^5.1.2",
     "immer": "^9.0.6",
