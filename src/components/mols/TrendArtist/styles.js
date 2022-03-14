@@ -36,12 +36,17 @@ export const TrendArtistContainer = styled.div`
   }
 `
 export const TicketArtistArea = styled.div`
-  flex: 1;
+
   display: flex;
   width: 100%;
   padding: 10px;
-  align-items: flex-start;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
+
+  @media screen(max-width:768px) {
+    padding: 0;
+
+  }
 `
 
 export const TicketLeilaoArea = styled.div`

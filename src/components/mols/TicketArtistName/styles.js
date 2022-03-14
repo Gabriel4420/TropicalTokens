@@ -10,7 +10,7 @@ export const Container = styled.div`
   heigth: 65px;
   border-radius: 80px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  margin: 10px;
+  
   .usernameArea {
     display: flex;
     flex-direction: column;
@@ -20,7 +20,11 @@ export const Container = styled.div`
   }
 
   @media (min-width: 300px) and (max-width: 600px) {
-    width: 200px;
+    max-width: 200px;
+  }
+
+  @media (min-width: 600px) and (max-width: 1024px) {
+    width: 1024px;
   }
 `
 

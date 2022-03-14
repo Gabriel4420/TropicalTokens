@@ -20,7 +20,7 @@ export const AboutArea = styled.div`
 
   @media (min-width: 300px) and (max-width: 700px) {
     flex-direction: column;
-
+    padding: 20px;
     .logo {
       padding-bottom: 50px;
     }
@@ -29,6 +29,10 @@ export const AboutArea = styled.div`
 
 export const LogoAboutArea = styled.div`
   padding-right: 50px;
+
+  @media (min-width: 300px) and (max-width: 700px) {
+    padding: 0;
+  }
 `
 export const AreaCarrousel = styled.div`
   display: flex;
@@ -49,6 +53,11 @@ export const AreaCarrousel = styled.div`
     justify-content: center;
     cursor: pointer;
   }
+
+  @media (min-width: 300px) and (max-width: 700px) {
+    padding-left: 20px;
+    padding: 0;
+  }
 `
 export const CarrouselSection = styled.div`
   .titleTrends {
@@ -57,6 +66,8 @@ export const CarrouselSection = styled.div`
     justify-content: center;
     width: 100%;
   }
+
+  
 
   .rec.rec-arrow {
     color: #333;

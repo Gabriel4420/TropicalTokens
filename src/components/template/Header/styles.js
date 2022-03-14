@@ -1,7 +1,7 @@
 import { FaBars } from 'react-icons/fa'
 import { NavLink as Link } from 'react-router-dom'
 import styled from 'styled-components'
-import {BsPersonCircle} from "react-icons/bs"
+import { BsPersonCircle } from 'react-icons/bs'
 
 export const Nav = styled.nav`
   background: white;
@@ -19,7 +19,7 @@ export const Nav = styled.nav`
     align-items: center;
     justify-content: flex-start;
     @media screen and (max-width: 768px) {
-      width: 300px;
+      max-width: 300px;
     }
   }
 `
@@ -29,8 +29,10 @@ export const NavLogo = styled.img`
   height: 100px;
   @media screen and (max-width: 768px) {
     width: 100%;
-    max-width: 150px;
-    height: 80px;
+    max-width: 200px;
+    height: 50px;
+    margin-top: -50px;
+    margin-left: -45px;
   }
 `
 
@@ -98,6 +100,22 @@ export const NavMenu = styled.div`
     background-color: #333;
     position: absolute;
     left: 275px;
+    top: 60px;
+    width: 30%;
+    height: 200px;
+
+    .link {
+      text-decoration: none;
+      color: white;
+      margin-bottom: 20px;
+      margin-top: 10px;
+      margin-left: 0px;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    position: absolute;
+    left: 195px;
     top: 60px;
     width: 30%;
     height: 200px;

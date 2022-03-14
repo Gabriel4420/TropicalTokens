@@ -1,4 +1,4 @@
-import React, {  useRef } from 'react'
+import React, { useRef } from 'react'
 import '@fontsource/playfair-display'
 import Header from '../../components/template/Header'
 import Footer from '../../components/template/Footer'
@@ -98,6 +98,7 @@ const Home = () => {
             tiltEasing="cubic-bezier(0.110, 1, 1.000, 0.210)"
             transitionMs={1000}
             initialFirstItem={0}
+            itemPadding={[10, 10]}
           >
             {data.map((item, key) => {
               const { title, artPath, quantityAvailable, description } = item
