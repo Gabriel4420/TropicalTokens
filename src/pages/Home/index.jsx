@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import '@fontsource/playfair-display'
 import Header from '../../components/template/Header'
 import Footer from '../../components/template/Footer'
@@ -17,63 +17,45 @@ import Carousel from 'react-elastic-carousel'
 const Home = () => {
   const carrouselRef = useRef(null)
 
-  const data = [
-    {
-      title: 'Bambos a la playa',
-      artPath:
-        'https://thumbs.dreamstime.com/b/paisagem-da-praia-da-arte-do-vetor-79191064.jpg',
-      quantityAvailable: '20/100',
-      description: 'bla bla bla bla bla bla açlskdjfçasldkjfçasldkfjasçldkfj',
-    },
-    {
-      title: 'Galaxy',
-      artPath:
-        'https://media.istockphoto.com/photos/background-of-galaxy-and-stars-picture-id1035676256?b=1&k=20&m=1035676256&s=170667a&w=0&h=NOtiiFfDhhUhZgQ4wZmHPXxHvt3RFVD-lTmnWCeyIG4=',
-      quantityAvailable: '20/100',
-      description: 'bla bla bla bla bla bla açlskdjfçasldkjfçasldkfjasçldkfj',
-    },
-    {
-      title: 'Surf Ocean',
-      artPath: 'https://miro.medium.com/max/1400/1*MqdN8ysLihK_lnp8JhEhaA.jpeg',
-      quantityAvailable: '20/100',
-      description: 'bla bla bla bla bla bla açlskdjfçasldkjfçasldkfjasçldkfj',
-    },
-    {
-      title: 'Bambos a la plaiya',
-      artPath:
-        'https://thumbs.dreamstime.com/b/paisagem-da-praia-da-arte-do-vetor-79191064.jpg',
-      quantityAvailable: '20/100',
-      description: 'bla bla bla bla bla bla açlskdjfçasldkjfçasldkfjasçldkfj',
-    },
-    {
-      title: 'Bambos a la plaiya',
-      artPath:
-        'https://thumbs.dreamstime.com/b/paisagem-da-praia-da-arte-do-vetor-79191064.jpg',
-      quantityAvailable: '20/100',
-      description: 'bla bla bla bla bla bla açlskdjfçasldkjfçasldkfjasçldkfj',
-    },
-    {
-      title: 'Bambos a la plaiya',
-      artPath:
-        'https://thumbs.dreamstime.com/b/paisagem-da-praia-da-arte-do-vetor-79191064.jpg',
-      quantityAvailable: '20/100',
-      description: 'bla bla bla bla bla bla açlskdjfçasldkjfçasldkfjasçldkfj',
-    },
-    {
-      title: 'Bambos a la plaiya',
-      artPath:
-        'https://thumbs.dreamstime.com/b/paisagem-da-praia-da-arte-do-vetor-79191064.jpg',
-      quantityAvailable: '20/100',
-      description: 'bla bla bla bla bla bla açlskdjfçasldkjfçasldkfjasçldkfj',
-    },
-    {
-      title: 'Galaxy',
-      artPath:
-        'https://media.istockphoto.com/photos/background-of-galaxy-and-stars-picture-id1035676256?b=1&k=20&m=1035676256&s=170667a&w=0&h=NOtiiFfDhhUhZgQ4wZmHPXxHvt3RFVD-lTmnWCeyIG4=',
-      quantityAvailable: '20/100',
-      description: 'bla bla bla bla bla bla açlskdjfçasldkjfçasldkfjasçldkfj',
-    },
-  ]
+  /*  */
+
+  const [data, setData] = useState([])
+  useEffect(() => {
+    const token = '447b69adc0d0d947bf2940c6817619'
+    // API GraphQL
+    fetch('https://graphql.datocms.com/', {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: JSON.stringify({
+        query: `query {
+        allUsers {
+          name,
+          avatar {
+            url
+          }
+        },
+        allCarousels {
+          title
+          quantityavailable
+          description
+          art {
+            url
+          }
+        }
+      }`,
+      }),
+    })
+      .then((response) => response.json()) // Pega o retorno do response.json() e já retorna
+      .then((respostaCompleta) => {
+        const resp = respostaCompleta.data.allCarousels
+
+        setData(resp)
+      })
+  }, [])
   return (
     <>
       <Header isMobile />
@@ -101,12 +83,12 @@ const Home = () => {
             itemPadding={[10, 10]}
           >
             {data.map((item, key) => {
-              const { title, artPath, quantityAvailable, description } = item
+              const { title, art, quantityavailable, description } = item
               return (
                 <Carrousel
                   title={title}
-                  artPath={artPath}
-                  quantityAvailable={quantityAvailable}
+                  artPath={art.url}
+                  quantityAvailable={quantityavailable}
                   carrouselRef={carrouselRef}
                   key={key}
                   description={description}

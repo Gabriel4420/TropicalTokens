@@ -1,10 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React, { useEffect } from 'react'
+import ReactDOM from 'react-dom'
 import Routers from './routes'
 
 ReactDOM.render(
+  
   <React.StrictMode>
-    <Routers/>
+    <Routers />
   </React.StrictMode>,
-  document.getElementById('root')
-);
+  document.getElementById('root'),
+)

@@ -38,8 +38,9 @@ export const TitleArea = styled.div`
   display: flex;
   width: 100%;
   align-items: center;
-  justify-content: flex-start;
-  padding-left: 10%;
+  justify-content: center;
+
+  text-align: center;
 `
 
 export const Title = styled.h2`
@@ -49,6 +50,7 @@ export const Title = styled.h2`
   font-weight: bold;
   font-family: 'sans-serif';
   font-size: 30px;
+  text-align: center;
   @media (min-width: 300px) and (max-width: 700px) {
     font-size: 20px;
   }
@@ -57,7 +59,7 @@ export const Title = styled.h2`
 export const QuantityArtAvailableArea = styled.div`
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   width: 100%;
   span {
     font-weight: bold;

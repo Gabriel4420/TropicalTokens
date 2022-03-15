@@ -7,11 +7,9 @@ export default async function receiverRequest(req,res){
         const client = new SiteClient(TOKEN);
         //validar os dados antes de sair cadastrando 
         const record = await client.items.create({
-            
+          
             ...req.body
-            /* title:'comunidade Teste',
-            image_url:'https://github.com/Gabriel4420.png',
-            create_slug:'Gabriel4420' */
+           
         })
         console.log(`Token: ${TOKEN}`)
         res.json({
