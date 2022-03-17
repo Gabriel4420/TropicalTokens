@@ -2,6 +2,7 @@ import { FaBars } from 'react-icons/fa'
 import { NavLink as Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { BsPersonCircle } from 'react-icons/bs'
+import { RiLoginBoxLine } from 'react-icons/ri'
 
 export const Nav = styled.nav`
   background: white;
@@ -116,10 +117,36 @@ export const NavMenu = styled.div`
   @media screen and (max-width: 500px) {
     position: absolute;
     left: 195px;
-    top: 60px;
-    width: 30%;
-    height: 200px;
+  }
+`
+export const NavMenuAvatar = styled.div`
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #333;
+  position: absolute;
+  left: 275px;
+  top: 60px;
+  width: 30%;
+  height: 200px;
 
+  justify-content: center;
+
+  .link {
+    text-decoration: none;
+    color: black;
+    margin-left: 30px;
+  }
+
+  .link:hover {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
+  @media screen and (max-width: 500px) {
+    left: 195px;
+    width: 30%;
     .link {
       text-decoration: none;
       color: white;
@@ -129,7 +156,6 @@ export const NavMenu = styled.div`
     }
   }
 `
-
 export const Person = styled(BsPersonCircle)`
   width: 20px;
   height: 20px;
@@ -142,9 +168,29 @@ export const Person = styled(BsPersonCircle)`
   }
 `
 
+export const Login = styled(RiLoginBoxLine)`
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+
+  @media screen and (max-width: 768px) {
+    .login {
+      color: black;
+    }
+  }
+`
+
 export const IconAreas = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
   width: 100%;
+
+  .login-text {
+    margin: 0;
+    font-weight: bold;
+  }
+  .login-text:hover {
+    text-decoration: underline;
+  }
 `

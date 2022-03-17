@@ -8,6 +8,8 @@ import {
   NavMenu,
   Person,
   IconAreas,
+  Login,
+  NavMenuAvatar,
 } from './styles.js'
 
 const Header = () => {
@@ -18,14 +20,20 @@ const Header = () => {
     { titulo: 'About', to: 'https://tropicaltokens.com/#mission', type: 'a' },
   ]
 
+  const menuAvatar = [
+    { titulo: 'Logout', to: '/', type: 'NavLink' },
+    { titulo: 'Admin', to: '/admin', type: 'NavLink', isAdmin: true },
+    { titulo: 'Meus Dados', to: '/', type: 'NavLink' },
+  ]
+
   const [isMobile, setIsMobile] = useState(false)
   const [isActive, setIsActive] = useState(false)
- 
 
   const handleActive = () => {
     setIsMobile(true)
     isActive === false ? setIsActive(true) : setIsActive(false)
   }
+
   return (
     <div style={{ padding: 20 }}>
       <Nav>
@@ -78,8 +86,31 @@ const Header = () => {
 
         <IconAreas>
           <NavLink to="/login">
-            <Person className='person' />
+            <Login className="login" />
+            <p className="login-text">login</p>
           </NavLink>
+          <Person className="person" />
+          {
+            <NavMenuAvatar >
+              {menuAvatar.map((item, key) =>
+                item.type === 'a' ? (
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    key={key}
+                    href={item.to}
+                    className="link"
+                  >
+                    {item.titulo}
+                  </a>
+                ) : (
+                  <NavLink key={key} to={item.to}>
+                    {item.titulo}
+                  </NavLink>
+                ),
+              )}
+            </NavMenuAvatar>
+          }
         </IconAreas>
       </Nav>
     </div>
