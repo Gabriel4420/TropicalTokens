@@ -2,7 +2,7 @@ import React from "react";
 import "@fontsource/playfair-display";
 
 import { ImGooglePlus3 } from "react-icons/im";
-import { BsFacebook } from "react-icons/bs";
+
 
 import "bootstrap/dist/css/bootstrap.css";
 import { Link } from "react-router-dom";
@@ -51,17 +51,7 @@ const Login = () => {
 					>
 						<ImGooglePlus3 size={30} color="white" />
 					</Button>
-					<Button
-						className="adjustment"
-						type="button"
-						icon
-						contentButton="Entrar com Facebook"
-						width="30"
-						radial={10}
-						bgColor="#1f83cb"
-					>
-						<BsFacebook size={30} color="white" />
-					</Button>
+					
 				</C.SocialArea>
 			</C.FormCentered>
 			<Footer />

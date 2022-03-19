@@ -21,12 +21,12 @@ const Home = () => {
 
   const [data, setData] = useState([])
   useEffect(() => {
-    const token = '447b69adc0d0d947bf2940c6817619'
+    
     // API GraphQL
     fetch('https://graphql.datocms.com/', {
       method: 'POST',
       headers: {
-        Authorization: `Bearer ${token}`,
+        Authorization: `Bearer ${ process.env.REACT_APP_TOKEN_API}`,
         'Content-Type': 'application/json',
         Accept: 'application/json',
       },

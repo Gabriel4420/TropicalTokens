@@ -27,7 +27,7 @@ export const TrendArtistContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 40px;
+  margin: 60px;
   .TitleArt {
     display: flex;
     align-items: center;

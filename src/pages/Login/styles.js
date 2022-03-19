@@ -72,7 +72,7 @@ export const SocialArea = styled.div`
 
   .text {
     color: #70cc98;
-    font-size: 50px;
+    font-size: 30px;
     font-weight: 400;
     text-decoration: none;
     &:hover {
