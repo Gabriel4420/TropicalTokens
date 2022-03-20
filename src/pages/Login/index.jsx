@@ -33,7 +33,7 @@ const Login = () => {
 						placeholder="Type your password"
 						type="password"
 					/>
-					<Button contentButton="Entrar" radial={10} to="/"></Button>
+					<Button width="50" contentButton="Entrar" radial={10} to="/"></Button>
 				</Form>
 
 				<C.SocialArea>
@@ -47,7 +47,7 @@ const Login = () => {
 						contentButton="Entrar com Google"
 						radial={10}
 						bgColor="#fa3d3d"
-						width="30"
+						width="100"
 					>
 						<ImGooglePlus3 size={30} color="white" />
 					</Button>

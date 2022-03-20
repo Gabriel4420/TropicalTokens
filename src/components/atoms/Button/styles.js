@@ -1,10 +1,11 @@
 import styled from 'styled-components'
 
 export const Container = styled.button`
-  width: ${(props) => (props.width ? props.width : '100')}%;
-  height: 80px;
+  width:350px;
+  max-width: ${(props) => (props.width ? props.width : '100')}%;
+  height: 70px;
   margin-top: 22.93px;
-  font-size: 30px;
+  font-size: 28px;
   color: white;
   background: ${(props) => (props.background ? props.background : '#70cc98')};
   border-color: ${(props) => (props.background ? props.background : '#70cc98')};
@@ -23,6 +24,6 @@ export const Container = styled.button`
   }
 
   &:hover {
-    filter: brightness(1.3);
+    filter: brightness(1.1);
   }
 `

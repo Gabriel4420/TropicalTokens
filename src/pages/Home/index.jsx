@@ -55,7 +55,7 @@ const Home = () => {
 
         setData(resp)
       })
-  }, [])
+  }, [data])
   return (
     <>
       <Header isMobile />

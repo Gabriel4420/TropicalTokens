@@ -2,11 +2,12 @@ import styled from 'styled-components'
 
 export const Header = styled.div`
   display: flex;
-
+  
   justify-content: center;
   align-items: center;
   width: 100%;
-
+  padding-left: 80px;
+  padding-right: 80px;
   @media (min-width: 300px) and (max-width: 600px) {
     display: flex;
     flex-direction: column;
@@ -36,7 +37,6 @@ export const TrendArtistContainer = styled.div`
   }
 `
 export const TicketArtistArea = styled.div`
-
   display: flex;
   width: 100%;
   padding: 10px;
@@ -45,7 +45,6 @@ export const TicketArtistArea = styled.div`
 
   @media screen(max-width:768px) {
     padding: 0;
-
   }
 `
 
