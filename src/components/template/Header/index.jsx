@@ -27,6 +27,7 @@ const Header = () => {
   ]
 
   const [isMobile, setIsMobile] = useState(false)
+  const [isAvatar, setIsAvatar] = useState(false)
   const [isActive, setIsActive] = useState(false)
 
   const handleActive = () => {

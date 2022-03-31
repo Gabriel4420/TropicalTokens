@@ -1,7 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react'
 import '@fontsource/playfair-display'
-import Header from '../../components/template/Header'
-import Footer from '../../components/template/Footer'
 import TrendArtist from '../../components/mols/TrendArtist'
 import { Col } from 'reactstrap'
 import {
@@ -21,12 +19,11 @@ const Home = () => {
 
   const [data, setData] = useState([])
   useEffect(() => {
-    
     // API GraphQL
     fetch('https://graphql.datocms.com/', {
       method: 'POST',
       headers: {
-        Authorization: `Bearer ${ process.env.REACT_APP_TOKEN_API}`,
+        Authorization: `Bearer 37e825c2f8347dc5e401a14cb0b9b4`,
         'Content-Type': 'application/json',
         Accept: 'application/json',
       },
@@ -58,7 +55,7 @@ const Home = () => {
   }, [data])
   return (
     <>
-      <Header isMobile />
+      
       <TrendArtistArea>
         <TrendArtist />
       </TrendArtistArea>
@@ -125,7 +122,7 @@ const Home = () => {
           </a>
         </Col>
       </AboutArea>
-      <Footer pos="home" />
+      
     </>
   )
 }
