@@ -18,41 +18,9 @@ const Home = () => {
   /*  */
 
   const [data, setData] = useState([])
-  useEffect(() => {
-    // API GraphQL
-    fetch('https://graphql.datocms.com/', {
-      method: 'POST',
-      headers: {
-        Authorization: `Bearer 37e825c2f8347dc5e401a14cb0b9b4`,
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-      },
-      body: JSON.stringify({
-        query: `query {
-        allUsers {
-          name,
-          avatar {
-            url
-          }
-        },
-        allCarousels {
-          title
-          quantityavailable
-          description
-          art {
-            url
-          }
-        }
-      }`,
-      }),
-    })
-      .then((response) => response.json()) // Pega o retorno do response.json() e já retorna
-      .then((respostaCompleta) => {
-        const resp = respostaCompleta.data.allCarousels
-
-        setData(resp)
-      })
-  }, [data])
+  useEffect(() => {}
+      
+  , [data])
   return (
     <>
       
@@ -106,7 +74,7 @@ const Home = () => {
           />
         </LogoAboutArea>
         <Col>
-          <h2>What is a tropical token?</h2>
+          <h2>What is Tropical Token?</h2>
           <p>
             Tropical Tokens is the backbone of content development between
             creators, digitality, and supporters of all kinds.

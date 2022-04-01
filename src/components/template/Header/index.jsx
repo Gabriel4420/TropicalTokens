@@ -12,7 +12,12 @@ import {
   NavMenuAvatar,
 } from './styles.js'
 
+
+
 const Header = () => {
+
+  
+
   const menu = [
     { titulo: 'Home', to: '/', type: 'NavLink' },
     { titulo: 'Gallery', to: '/gallery', type: 'NavLink' },
@@ -36,6 +41,7 @@ const Header = () => {
   }
 
   return (
+    
     <div style={{ padding: 20 }}>
       <Nav>
         <div className="NavLogoArea">
@@ -92,7 +98,7 @@ const Header = () => {
           </NavLink>
           <Person className="person" />
           {
-            <NavMenuAvatar >
+            <NavMenuAvatar>
               {menuAvatar.map((item, key) =>
                 item.type === 'a' ? (
                   <a
