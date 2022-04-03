@@ -19,11 +19,13 @@ const Home = () => {
   /*  */
 
   const [data, setData] = useState([])
-  useEffect(async () => {
-    
-    await api.get('/arts').then((response) => {
-      setData(response.data.arts)
-    })
+  useEffect(() => {
+    const fetchData = async () => {
+      await api.get('/arts').then((response) => {
+        setData(response.data.arts)
+      })
+    }
+    fetchData()
   }, [data])
   return (
     <>
@@ -41,7 +43,7 @@ const Home = () => {
               { width: 550, itemsToShow: 2, itemsToScroll: 2 },
               { width: 768, itemsToShow: 3 },
               { width: 1129, itemsToShow: 2 },
-              { width: 1200, itemsToShow: 4 },
+              { width: 1200, itemsToShow: 1 },
             ]}
             enableTilt
             easing="cubic-bezier(1,.15,.55,1.54)"
@@ -52,10 +54,12 @@ const Home = () => {
           >
             {data.map((item, key) => {
               const { title, images, quantityavailable, description } = item
+
+              console.log(images)
               return (
                 <Carrousel
                   title={title}
-                  artPath={`${process.env.REACT_APP_API}/images/arts/${images[key]}`}
+                  artPath={`${process.env.REACT_APP_API}/images/arts/${images[0]}`}
                   quantityAvailable={quantityavailable}
                   carrouselRef={carrouselRef}
                   key={key}

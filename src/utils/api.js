@@ -1,5 +1,5 @@
 import axios from 'axios'
 
 export default axios.create({
-  baseURL: 'https://api-tropical-tokens.herokuapp.com',
+  baseURL: 'https://api-tropical-tokens.herokuapp.com/',
 })

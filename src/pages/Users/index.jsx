@@ -37,9 +37,13 @@ const Users = () => {
           <tbody>
             {data.map((item, index) => {
               const { user } = item
+
               return (
                 <tr key={index}>
-                  <td>{user.name}</td>
+                  <td>
+                    {user.image}
+                    {user.name}
+                  </td>
                   <td>{data.length}</td>
                 </tr>
               )

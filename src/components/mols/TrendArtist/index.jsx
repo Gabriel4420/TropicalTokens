@@ -16,20 +16,23 @@ import TicketArtistName from '../TicketArtistName/index.jsx'
 const TrendArtist = () => {
   const [data, setData] = useState([])
   useEffect(() => {
-    ;(async () => {
-      await api.get('/arts/').then((response) => {
+    const fetchData = async () => {
+      await api.get('arts/').then((response) => {
         setData(response.data.arts)
       })
-    })()
-  }, [data])
+    }
+
+    fetchData()
+  }, [])
+
+ 
 
   return (
     <TrendArtistContainer>
-      {data.map((item, key) => {
+      {data.filter((item) => item.title === 'Praia Modesta').map((item, key) => {
         const { title, images, user } = item
         return (
           <div key={key}>
-            {' '}
             <div className="TitleArt">
               <h2>{title}</h2>
             </div>
@@ -43,6 +46,7 @@ const TrendArtist = () => {
                 <TicketArtistName
                   titleArtist={`@${user.name}`}
                   createBy="Create By"
+                  titleArt={title}
                 />
               </TicketArtistArea>
             </Header>

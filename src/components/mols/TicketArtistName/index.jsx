@@ -9,39 +9,36 @@ import {
 } from './styles'
 import { UserAvatar } from '../../atoms/UserAvatar'
 
-const TicketArtistName = ({ titleArtist, createBy }) => {
-  const [token] = useState(localStorage.getItem('token') || '')
+const TicketArtistName = ({ titleArtist, createBy , titleArt}) => {
   const [data, setData] = useState([])
+
   useEffect(() => {
     const fetchData = async () => {
-      await api
-        .get('/users/checkusers', {
-          headers: {
-            Authorization: `Bearer ${JSON.parse(token)}`,
-          },
-        })
-        .then((response) => {
-          setData(response.data.users)
-        })
+      await api.get('arts/').then((response) => {
+        setData(response.data.arts)
+      })
     }
 
     fetchData()
-  }, [data, token])
+  }, [data])
 
   return (
     <Background createBy={createBy}>
       <h3>{createBy}</h3>
       <Container>
-        {data.map((item, index) => {
-          const { image } = item
-          return (
-            <TrendAvatarArea key={index}>
-              <UserAvatar
-                src={`${process.env.REACT_APP_API}/images/user/${image}`}
-              />
-            </TrendAvatarArea>
-          )
-        })}
+        {data
+          .filter((item) => item.title === titleArt)
+          .map((item, index) => {
+            const { user } = item
+            console.log(user)
+            return (
+              <TrendAvatarArea key={index}>
+                <UserAvatar
+                  src={`${process.env.REACT_APP_API}/images/users/${user.image}`}
+                />
+              </TrendAvatarArea>
+            )
+          })}
         <UsernameTittleArea titleArtist={titleArtist}>
           <h3>{titleArtist}</h3>
         </UsernameTittleArea>
