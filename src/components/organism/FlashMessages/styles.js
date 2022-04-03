@@ -9,8 +9,8 @@ export const MessageContainer = styled.div`
   max-width: 60%;
   margin: 1em auto;
   border-radius: 5px;
-  color: ${props => props.typeflash == 'error'? '#721c24':'#155724'};
-  background-color:${props => props.typeflash == 'error'?'#f8d7da':'#d4edda'} ;
-  border-color: ${props => props.typeflash == 'error'?'#f5c6cb':'#c3e6cb'} ;
+  color: ${props => props.typeflash === 'error'? '#721c24':'#155724'};
+  background-color:${props => props.typeflash === 'error'?'#f8d7da':'#d4edda'} ;
+  border-color: ${props => props.typeflash === 'error'?'#f5c6cb':'#c3e6cb'} ;
  
 `
