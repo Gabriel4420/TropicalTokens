@@ -25,7 +25,7 @@ export default function useAuth() {
 
   async function register(user) {
 
-    console.log(user)
+   
     let msgText = 'Cadastro realizado com sucesso!'
     let msgType = 'success'
 

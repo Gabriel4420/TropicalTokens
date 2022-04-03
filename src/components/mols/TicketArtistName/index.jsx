@@ -9,7 +9,7 @@ import {
 } from './styles'
 import { UserAvatar } from '../../atoms/UserAvatar'
 
-const TicketArtistName = ({ titleArtist, createBy , titleArt}) => {
+const TicketArtistName = ({ titleArtist, createBy, titleArt }) => {
   const [data, setData] = useState([])
 
   useEffect(() => {
@@ -34,7 +34,9 @@ const TicketArtistName = ({ titleArtist, createBy , titleArt}) => {
             return (
               <TrendAvatarArea key={index}>
                 <UserAvatar
-                  src={`${process.env.REACT_APP_API}/images/users/${user.image}`}
+                  src={`${
+                    process.env.REACT_APP_API
+                  }/images/users/${user.image.toString()}`}
                 />
               </TrendAvatarArea>
             )

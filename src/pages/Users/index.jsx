@@ -40,10 +40,7 @@ const Users = () => {
 
               return (
                 <tr key={index}>
-                  <td>
-                    {user.image}
-                    {user.name}
-                  </td>
+                  <td>{user.name}</td>
                   <td>{data.length}</td>
                 </tr>
               )
