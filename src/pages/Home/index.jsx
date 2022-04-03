@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react'
+import api from '../../utils/api'
 import '@fontsource/playfair-display'
 import TrendArtist from '../../components/mols/TrendArtist'
 import { Col } from 'reactstrap'
@@ -18,12 +19,14 @@ const Home = () => {
   /*  */
 
   const [data, setData] = useState([])
-  useEffect(() => {}
-      
-  , [data])
+  useEffect(async () => {
+    
+    await api.get('/arts').then((response) => {
+      setData(response.data.arts)
+    })
+  }, [data])
   return (
     <>
-      
       <TrendArtistArea>
         <TrendArtist />
       </TrendArtistArea>
@@ -48,11 +51,11 @@ const Home = () => {
             itemPadding={[10, 10]}
           >
             {data.map((item, key) => {
-              const { title, art, quantityavailable, description } = item
+              const { title, images, quantityavailable, description } = item
               return (
                 <Carrousel
                   title={title}
-                  artPath={art.url}
+                  artPath={`${process.env.REACT_APP_API}/images/arts/${images[key]}`}
                   quantityAvailable={quantityavailable}
                   carrouselRef={carrouselRef}
                   key={key}
@@ -90,7 +93,6 @@ const Home = () => {
           </a>
         </Col>
       </AboutArea>
-      
     </>
   )
 }

@@ -9,12 +9,15 @@ import Header from '../components/template/Header'
 import Footer from '../components/template/Footer'
 import Container from '../components/template/Container'
 import { UserProvider } from '../contexts/UserContext'
+import FlashMessages from '../components/organism/FlashMessages'
+
 const Routers = () => {
   return (
     <BrowserRouter>
       <Container>
         <UserProvider>
           <Header isMobile={true} />
+          <FlashMessages />
           <Routes>
             <Route exact path="/" element={<Home />}></Route>
             <Route exact path="*" element={<Error404 />}></Route>

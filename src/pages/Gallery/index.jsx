@@ -1,15 +1,12 @@
 import React from 'react'
+import { Title } from '../../components/atoms/Texts'
 
 import * as C from './styles'
 
 const Gallery = () => {
   return (
     <>
-      
-      <C.TitleArea>
-        <h2>Trends</h2>
-      </C.TitleArea>
-     
+      <Title>Trends</Title>
     </>
   )
 }

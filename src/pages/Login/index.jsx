@@ -4,7 +4,7 @@ import '@fontsource/playfair-display'
 import 'bootstrap/dist/css/bootstrap.css'
 import { Link } from 'react-router-dom'
 import { Form, Container } from 'reactstrap'
-import Footer from '../../components/template/Footer'
+
 import { Context } from '../../contexts/UserContext'
 import * as C from './styles'
 
@@ -17,8 +17,6 @@ const Login = () => {
 
   function handleChange(e) {
     setUser({ ...user, [e.target.name]: e.target.value })
-  
- 
   }
 
   const handleSubmit = (e) => {
@@ -63,7 +61,6 @@ const Login = () => {
           </Link>
         </C.SocialArea>
       </C.FormCentered>
-
     </Container>
   )
 }

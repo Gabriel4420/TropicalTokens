@@ -26,11 +26,14 @@ export const ArtPhotoArea = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
+  align-items: center;
+  justify-content: center;
 `
 
 export const ArtPhoto = styled.img`
   width: 100%;
-  height: 180px;
+  max-width: 500px;
+  height: 50vh;
   object-fit: cover;
 `
 
