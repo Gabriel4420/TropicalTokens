@@ -5,7 +5,6 @@ import { useNavigate } from 'react-router-dom'
 import useFlashMessage from './useFlashMessage'
 
 export default function useAuth() {
-    
   const [authenticated, setAuthenticated] = useState(false)
   const [loading, setLoading] = useState(true)
   const navigate = useNavigate()
@@ -24,8 +23,6 @@ export default function useAuth() {
   }, [])
 
   async function register(user) {
-
-   
     let msgText = 'Cadastro realizado com sucesso!'
     let msgType = 'success'
 

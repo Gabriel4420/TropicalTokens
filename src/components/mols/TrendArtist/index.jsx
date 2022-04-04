@@ -25,34 +25,38 @@ const TrendArtist = () => {
     fetchData()
   }, [])
 
- 
-
   return (
     <TrendArtistContainer>
-      {data.filter((item) => item.title === 'Praia Modesta').map((item, key) => {
-        const { title, images, user } = item
-        return (
-          <div key={key}>
-            <div className="TitleArt">
-              <h2>{title}</h2>
+      {data
+        .filter((item) => item.title === 'Praia Modesta')
+        .map((item, key) => {
+          const { title, images, user } = item
+          return (
+            <div key={key}>
+              <div className="TitleArt">
+                <h2>{title}</h2>
+              </div>
+              <Header>
+                <TrendNftArea>
+                  {images ? (
+                    <TrendNft
+                      src={`${process.env.REACT_APP_API}/images/arts/${images[key]}`}
+                    />
+                  ) : (
+                    <TrendNft src={`/images/leo.png`} />
+                  )}
+                </TrendNftArea>
+                <TicketArtistArea>
+                  <TicketArtistName
+                    titleArtist={`@${user.name}`}
+                    createBy="Create By"
+                    titleArt={title}
+                  />
+                </TicketArtistArea>
+              </Header>
             </div>
-            <Header>
-              <TrendNftArea>
-                <TrendNft
-                  src={`${process.env.REACT_APP_API}/images/arts/${images[key]}`}
-                />
-              </TrendNftArea>
-              <TicketArtistArea>
-                <TicketArtistName
-                  titleArtist={`@${user.name}`}
-                  createBy="Create By"
-                  titleArt={title}
-                />
-              </TicketArtistArea>
-            </Header>
-          </div>
-        )
-      })}
+          )
+        })}
     </TrendArtistContainer>
   )
 }

@@ -10,6 +10,7 @@ import Footer from '../components/template/Footer'
 import Container from '../components/template/Container'
 import { UserProvider } from '../contexts/UserContext'
 import FlashMessages from '../components/organism/FlashMessages'
+import Register from '../pages/Register'
 
 const Routers = () => {
   return (
@@ -22,6 +23,7 @@ const Routers = () => {
             <Route exact path="/" element={<Home />}></Route>
             <Route exact path="*" element={<Error404 />}></Route>
             <Route exact path="/login" element={<Login />}></Route>
+            <Route exact path="/register" element={<Register />}></Route>
             <Route exact path="/users" element={<Users />}></Route>
             <Route exact path="/gallery" element={<Gallery />}></Route>
           </Routes>

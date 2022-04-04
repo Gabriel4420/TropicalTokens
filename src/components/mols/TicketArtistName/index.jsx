@@ -11,7 +11,7 @@ import { UserAvatar } from '../../atoms/UserAvatar'
 
 const TicketArtistName = ({ titleArtist, createBy, titleArt }) => {
   const [data, setData] = useState([])
-
+  const [data2, setData2] = useState([])
   useEffect(() => {
     const fetchData = async () => {
       await api.get('arts/').then((response) => {
@@ -22,22 +22,37 @@ const TicketArtistName = ({ titleArtist, createBy, titleArt }) => {
     fetchData()
   }, [data])
 
+  useEffect(() => {
+    const fetchData = async () => {
+      await api.get('users/').then((response) => {
+        console.log(response.data)
+        setData2(response.data.artists)
+      })
+    }
+
+    fetchData()
+  }, [data2])
+
   return (
     <Background createBy={createBy}>
       <h3>{createBy}</h3>
       <Container>
-        {data
-          .filter((item) => item.title === titleArt)
+        {data2
+          .filter((item) => item.name === 'Gabriel')
           .map((item, index) => {
-            const { user } = item
-            console.log(user)
+            const { image } = item
+
             return (
               <TrendAvatarArea key={index}>
-                <UserAvatar
-                  src={`${
-                    process.env.REACT_APP_API
-                  }/images/users/${user.image.toString()}`}
-                />
+                {image ? (
+                  <UserAvatar
+                    src={`${
+                      process.env.REACT_APP_API
+                    }/images/users/${image.toString()}`}
+                  />
+                ) : (
+                  <UserAvatar src={`/images/leo.png`} />
+                )}
               </TrendAvatarArea>
             )
           })}

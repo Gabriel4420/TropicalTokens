@@ -54,12 +54,15 @@ const Home = () => {
           >
             {data.map((item, key) => {
               const { title, images, quantityavailable, description } = item
-              
-           
+
               return (
                 <Carrousel
                   title={title}
-                  artPath={`${process.env.REACT_APP_API}/images/arts/${images}`}
+                  artPath={
+                    images
+                      ? `${process.env.REACT_APP_API}/images/arts/${images}`
+                      : '/images/leo.png'
+                  }
                   quantityAvailable={quantityavailable}
                   carrouselRef={carrouselRef}
                   key={key}

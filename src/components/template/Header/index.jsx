@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+
 import '@fontsource/playfair-display'
 import {
   Nav,
@@ -12,12 +13,11 @@ import {
   NavMenuAvatar,
 } from './styles.js'
 
-
+import 'bootstrap/dist/css/bootstrap.min.css'
+import { useNavigate } from 'react-router-dom'
+import { Modal, ModalHeader, ModalBody, ModalFooter, Button } from 'reactstrap'
 
 const Header = () => {
-
-  
-
   const menu = [
     { titulo: 'Home', to: '/', type: 'NavLink' },
     { titulo: 'Gallery', to: '/gallery', type: 'NavLink' },
@@ -26,13 +26,20 @@ const Header = () => {
   ]
 
   const menuAvatar = [
-    { titulo: 'Logout', to: '/', type: 'NavLink' },
+    {
+      titulo: 'Logout',
+      to: () => {
+        const token = localStorage.getItem('token')
+        return token
+      },
+      type: 'NavLink',
+    },
     { titulo: 'Admin', to: '/admin', type: 'NavLink', isAdmin: true },
     { titulo: 'Meus Dados', to: '/', type: 'NavLink' },
   ]
 
   const [isMobile, setIsMobile] = useState(false)
-  const [isAvatar, setIsAvatar] = useState(false)
+  const [isAvatarActive, setIsAvatarActive] = useState(false)
   const [isActive, setIsActive] = useState(false)
 
   const handleActive = () => {
@@ -40,8 +47,13 @@ const Header = () => {
     isActive === false ? setIsActive(true) : setIsActive(false)
   }
 
+  const handleMenuAvatar = () => {
+    setIsAvatarActive(!isAvatarActive)
+  }
+
+  const [open, setOpen] = useState(false)
+
   return (
-    
     <div style={{ padding: 20 }}>
       <Nav>
         <div className="NavLogoArea">
@@ -96,9 +108,11 @@ const Header = () => {
             <Login className="login" />
             <p className="login-text">login</p>
           </NavLink>
-          <Person className="person" />
-          {
-            <NavMenuAvatar>
+          <Person onClick={() => setOpen(true)} className="person" />
+
+          <Modal isOpen={open} toggle={() => setOpen(false)}>
+            <ModalHeader charCode="Y">escolha uma opção</ModalHeader>
+            <ModalBody>
               {menuAvatar.map((item, key) =>
                 item.type === 'a' ? (
                   <a
@@ -116,8 +130,8 @@ const Header = () => {
                   </NavLink>
                 ),
               )}
-            </NavMenuAvatar>
-          }
+            </ModalBody>
+          </Modal>
         </IconAreas>
       </Nav>
     </div>
