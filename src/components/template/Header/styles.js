@@ -50,10 +50,10 @@ export const NavLink = styled(Link)`
     color: black;
   }
   @media screen and (max-width: 768px) {
-    color: white;
+    color: black;
     &:hover {
       font-weight: bold;
-      color: white;
+      color: green;
     }
     .person {
       color: black;
@@ -107,7 +107,7 @@ export const NavMenu = styled.div`
 
     .link {
       text-decoration: none;
-      color: white;
+
       margin-bottom: 20px;
       margin-top: 10px;
       margin-left: 0px;
@@ -124,7 +124,7 @@ export const Person = styled(BsPersonCircle)`
   width: 20px;
   height: 20px;
   cursor: pointer;
-  position: fixed;
+  
 
   @media screen and (max-width: 768px) {
     .person {

@@ -7,18 +7,16 @@ import { Title } from '../../components/atoms/Texts'
 import { Context } from '../../contexts/UserContext'
 import { Container } from 'reactstrap'
 
-function Register() {
+const Register = () => {
+  /* use States & useContext */
+
   const [user, setUser] = useState({})
   const { register } = useContext(Context)
 
-  function handleChange(e) {
+  const handleChange = (e) =>
     setUser({ ...user, [e.target.name]: e.target.value })
-  }
 
-  function handleSubmit(e) {
-    e.preventDefault()
-    register(user)
-  }
+  const handleSubmit = (e) => e.preventDefault() + register(user)
 
   return (
     <Container>
@@ -55,7 +53,6 @@ function Register() {
           handleOnChange={handleChange}
         />
         <Input
-          
           type="password"
           name="confirmPassword"
           placeholder="Confirme a sua senha"

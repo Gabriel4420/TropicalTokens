@@ -1,13 +1,7 @@
-import { RoundedImageBackground } from './index'
+import { RoundedImageBackground } from './styles.js'
 
 const RoundedImage = ({ src, alt, width }) => {
-  return (
-    <RoundedImageBackground
-      className={` ${styles[width]}`}
-      src={src}
-      alt={alt}
-    />
-  )
+  return <RoundedImageBackground className={` ${width}`} src={src} alt={alt} />
 }
 
 export default RoundedImage

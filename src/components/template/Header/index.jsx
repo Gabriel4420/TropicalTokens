@@ -10,12 +10,11 @@ import {
   Person,
   IconAreas,
   Login,
-  NavMenuAvatar,
 } from './styles.js'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { useNavigate } from 'react-router-dom'
-import { Modal, ModalHeader, ModalBody, ModalFooter, Button } from 'reactstrap'
+
+import { Modal, ModalHeader, ModalBody, Button } from 'reactstrap'
 
 const Header = () => {
   const menu = [
@@ -35,20 +34,15 @@ const Header = () => {
       type: 'NavLink',
     },
     { titulo: 'Admin', to: '/admin', type: 'NavLink', isAdmin: true },
-    { titulo: 'Meus Dados', to: '/', type: 'NavLink' },
+    { titulo: 'Meus Dados', to: '/profile', type: 'NavLink' },
   ]
 
   const [isMobile, setIsMobile] = useState(false)
-  const [isAvatarActive, setIsAvatarActive] = useState(false)
   const [isActive, setIsActive] = useState(false)
 
   const handleActive = () => {
     setIsMobile(true)
     isActive === false ? setIsActive(true) : setIsActive(false)
-  }
-
-  const handleMenuAvatar = () => {
-    setIsAvatarActive(!isAvatarActive)
   }
 
   const [open, setOpen] = useState(false)
@@ -111,7 +105,15 @@ const Header = () => {
           <Person onClick={() => setOpen(true)} className="person" />
 
           <Modal isOpen={open} toggle={() => setOpen(false)}>
-            <ModalHeader charCode="Y">escolha uma opção</ModalHeader>
+            <ModalHeader
+              close={
+                <Button color="danger" outline onClick={() => setOpen(false)}>
+                  ×
+                </Button>
+              }
+            >
+              escolha uma opção
+            </ModalHeader>
             <ModalBody>
               {menuAvatar.map((item, key) =>
                 item.type === 'a' ? (
