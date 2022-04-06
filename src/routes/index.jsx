@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import ReactToolTip from 'react-tooltip'
-import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Home from '../pages/Home'
 import Error404 from '../pages/Error'
 import Login from '../pages/Login'
@@ -18,30 +18,42 @@ import { FiUser } from 'react-icons/fi'
 import { BsBrush } from 'react-icons/bs'
 import MenuItem from '../components/organism/MenuItem'
 import { Menu } from '../components/organism/MenuVertical'
-
+import { PageBody } from '../components/template/PageBody'
 const Routers = () => {
   return (
     <BrowserRouter>
       <Container>
         <UserProvider>
           <Header isMobile={true} />
-          {window.location.pathname === '/admin' && (
-            <Menu>
-              <MenuItem title="arts" link="/myarts">
-                <BsBrush color="white" />
-              </MenuItem>
-              <MenuItem title="users" link="/users">
-                <FiUser color="white" />
-              </MenuItem>
-            </Menu>
-          )}
+
           <FlashMessages />
-          
+
           <Routes>
             <Route exact path="/" element={<Home />}></Route>
             <Route exact path="*" element={<Error404 />}></Route>
             <Route exact path="/login" element={<Login />}></Route>
-            <Route exact path="/admin" element={<Admin />}></Route>
+            <Route
+              exact
+              path="/admin"
+              element={
+                <>
+                  {' '}
+                  <PageBody>
+                    <Menu>
+                      <MenuItem title="arts" link="/myarts">
+                        <BsBrush color="white" />
+                      </MenuItem>
+                      <MenuItem title="users" link="/users">
+                        <FiUser color="white" />
+                      </MenuItem>
+                    </Menu>
+                    <ReactToolTip id="tip-top" place="top" effect="solid" />
+        <ReactToolTip id="tip-right" place="right" effect="solid" />
+                    <Admin />
+                  </PageBody>
+                </>
+              }
+            ></Route>
             <Route exact path="/register" element={<Register />}></Route>
             <Route exact path="/profile" element={<Profile />}></Route>
             <Route exact path="/users" element={<Users />}></Route>
@@ -49,8 +61,7 @@ const Routers = () => {
           </Routes>
           <Footer />
         </UserProvider>
-        <ReactToolTip id="tip-top" place="top" effect="solid" />
-        <ReactToolTip id="tip-right" place="right" effect="solid" />
+        
       </Container>
     </BrowserRouter>
   )

@@ -13,7 +13,6 @@ const MenuItem = ({ link, title, children }) => {
   }
   return (
     <Container
-    
       data-tip={title}
       data-for="tip-right"
       active={isActive}

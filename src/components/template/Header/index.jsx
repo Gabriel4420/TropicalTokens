@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 
 import '@fontsource/playfair-display'
 import {
@@ -15,8 +15,9 @@ import {
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 import { Modal, ModalHeader, ModalBody, Button } from 'reactstrap'
-
+import { Context } from '../../../contexts/UserContext'
 const Header = () => {
+  const { authenticated, logout } = useContext(Context)
   const menu = [
     { titulo: 'Home', to: '/', type: 'NavLink' },
     { titulo: 'Gallery', to: '/gallery', type: 'NavLink' },
@@ -27,11 +28,8 @@ const Header = () => {
   const menuAvatar = [
     {
       titulo: 'Logout',
-      to: () => {
-        const token = localStorage.getItem('token')
-        return token
-      },
-      type: 'NavLink',
+      to: logout,
+      type: 'Button',
     },
     { titulo: 'Admin', to: '/admin', type: 'NavLink', isAdmin: true },
     { titulo: 'Meus Dados', to: '/profile', type: 'NavLink' },
@@ -98,42 +96,55 @@ const Header = () => {
         )}
 
         <IconAreas>
-          <NavLink to="/login">
-            <Login className="login" />
-            <p className="login-text">login</p>
-          </NavLink>
-          <Person onClick={() => setOpen(true)} className="person" />
-
-          <Modal isOpen={open} toggle={() => setOpen(false)}>
-            <ModalHeader
-              close={
-                <Button color="danger" outline onClick={() => setOpen(false)}>
-                  ×
-                </Button>
-              }
-            >
-              escolha uma opção
-            </ModalHeader>
-            <ModalBody>
-              {menuAvatar.map((item, key) =>
-                item.type === 'a' ? (
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    key={key}
-                    href={item.to}
-                    className="link"
-                  >
-                    {item.titulo}
-                  </a>
-                ) : (
-                  <NavLink key={key} to={item.to}>
-                    {item.titulo}
-                  </NavLink>
-                ),
-              )}
-            </ModalBody>
-          </Modal>
+          {authenticated ? (
+            <>
+              {' '}
+              <Person onClick={() => setOpen(true)} className="person" />
+              <Modal isOpen={open} toggle={() => setOpen(false)}>
+                <ModalHeader
+                  close={
+                    <Button
+                      color="danger"
+                      outline
+                      onClick={() => setOpen(false)}
+                    >
+                      ×
+                    </Button>
+                  }
+                >
+                  escolha uma opção
+                </ModalHeader>
+                <ModalBody>
+                  {menuAvatar.map((item, key) =>
+                    item.type === 'a' ? (
+                      <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        key={key}
+                        href={item.to}
+                        className="link"
+                      >
+                        {item.titulo}
+                      </a>
+                    ) : item.type === 'NavLink' ? (
+                      <NavLink key={key} to={item.to}>
+                        {item.titulo}
+                      </NavLink>
+                    ) : (
+                      <Button key={key} onClick={item.to}>
+                        {item.titulo}
+                      </Button>
+                    ),
+                  )}
+                </ModalBody>
+              </Modal>
+            </>
+          ) : (
+            <NavLink to="/login">
+              <Login className="login" />
+              <p className="login-text">login</p>
+            </NavLink>
+          )}
         </IconAreas>
       </Nav>
     </div>
