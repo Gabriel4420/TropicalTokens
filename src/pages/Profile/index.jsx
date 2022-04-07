@@ -89,7 +89,7 @@ function Profile() {
               src={
                 preview
                   ? URL.createObjectURL(preview)
-                  : `${process.env.REACT_APP_API}/images/users/${user.image}`
+                  : `https://tropical-tokens.s3.amazonaws.com/${user.image}`
               }
               alt={user.name}
               width="40px"
