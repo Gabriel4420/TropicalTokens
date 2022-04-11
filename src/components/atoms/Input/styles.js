@@ -10,20 +10,21 @@ export const ContainerInput = styled.div`
 export const InputBar = styled.input`
   padding: 0.5em;
   margin: 0.5em;
-  color: #70cc98;
+  color: #04Bc98;
+  font-weight: bold;
   background: #f5f5f5;
   border: none;
   border-radius: ${(props) => {
     switch (props.mode) {
       case 'hard-radius':
-        return '50px';// eslint-disable-next-line
-        break;
+        return '50px' // eslint-disable-next-line
+        break
       case 'light-radius':
-        return '20px';// eslint-disable-next-line
-        break;
+        return '20px' // eslint-disable-next-line
+        break
       default:
-        return '20px';// eslint-disable-next-line
-        break;
+        return '20px' // eslint-disable-next-line
+        break
     }
   }};
   width: 100%;

@@ -4,9 +4,11 @@ import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import useFlashMessage from './useFlashMessage'
 
-export default function useAuth() {
+const useAuth = () => {
   const [authenticated, setAuthenticated] = useState(false)
+
   const [loading, setLoading] = useState(true)
+
   const navigate = useNavigate()
 
   const { setFlashMessage } = useFlashMessage()
@@ -22,14 +24,33 @@ export default function useAuth() {
     setLoading(false)
   }, [])
 
-  async function register(user) {
+  const register = async (user) => {
     let msgText = 'Cadastro realizado com sucesso!'
+
     let msgType = 'success'
 
     try {
-      const data = await api.post('/users/register', user).then((response) => {
-        return response.data
-      })
+      const data = await api
+        .post('/users/register', user)
+        .then((response) => response.data)
+
+      await authUser(data)
+    } catch (error) {
+      // tratar erro
+      msgText = error.response.data.message
+      msgType = 'error'
+    }
+
+    setFlashMessage(msgText, msgType)
+  }
+  const registerArt = async (art) => {
+    let msgText = 'Arte cadastrada com sucesso!'
+    let msgType = 'success'
+
+    try {
+      const data = await api
+        .post('/art/register', art)
+        .then((response) => response.data)
 
       await authUser(data)
     } catch (error) {
@@ -41,14 +62,14 @@ export default function useAuth() {
     setFlashMessage(msgText, msgType)
   }
 
-  async function login(user) {
+  const login = async (user) => {
     let msgText = 'Login realizado com sucesso!'
     let msgType = 'success'
 
     try {
-      const data = await api.post('/users/login', user).then((response) => {
-        return response.data
-      })
+      const data = await api
+        .post('/users/login', user)
+        .then((response) => response.data)
 
       await authUser(data)
     } catch (error) {
@@ -60,14 +81,14 @@ export default function useAuth() {
     setFlashMessage(msgText, msgType)
   }
 
-  async function authUser(data) {
+  const authUser = async (data) => {
     setAuthenticated(true)
     localStorage.setItem('token', JSON.stringify(data.token))
 
     navigate('/')
   }
 
-  function logout() {
+  const logout = () => {
     const msgText = 'Logout realizado com sucesso!'
     const msgType = 'success'
 
@@ -79,5 +100,7 @@ export default function useAuth() {
     setFlashMessage(msgText, msgType)
   }
 
-  return { authenticated, loading, register, login, logout }
+  return { authenticated, loading, registerArt, register, login, logout }
 }
+
+export default useAuth

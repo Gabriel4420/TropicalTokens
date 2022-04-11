@@ -3,21 +3,13 @@ import styled from 'styled-components'
 export const Container = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   cursor: pointer;
   width: 100%;
   max-width: 300px;
   heigth: 65px;
   border-radius: 80px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  
-  .usernameArea {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    align-items: space-between;
-    justify-content: center;
-  }
 
   @media (min-width: 300px) and (max-width: 600px) {
     max-width: 200px;
@@ -30,8 +22,7 @@ export const Container = styled.div`
 
 export const TrendAvatarArea = styled.div`
   flex: 1;
-  width: 25%;
- 
+  width: 100%;
 `
 
 export const UsernameTittleArea = styled.div`
@@ -40,9 +31,16 @@ export const UsernameTittleArea = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  margin-left: -100px;
+  margin-left: -150px;
+  margin-top: 10px;
+
   h3 {
     font-weight: bold;
+    font-size: 16px;
+  }
+
+  h3:hover {
+    text-decoration: underline;
   }
 
   @media (min-width: 200px) and (max-width: 600px) {
@@ -51,7 +49,7 @@ export const UsernameTittleArea = styled.div`
 `
 
 export const Background = styled.div`
-  width: 30%;
+  width: 100%;
   @media (min-width: 300px) and (max-width: 600px) {
     width: 100%;
     display: flex;

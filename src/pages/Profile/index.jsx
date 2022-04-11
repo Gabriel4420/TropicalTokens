@@ -63,11 +63,11 @@ function Profile() {
         return response.data
       })
       .catch((err) => {
-        console.log(err)
+      
         msgType = 'error'
         return err.response.data
       })
-    console.log(data)
+  
 
     setFlashMessage(data.message, msgType)
   }
@@ -86,11 +86,7 @@ function Profile() {
             }}
           >
             <RoundedImage
-              src={
-                preview
-                  ? URL.createObjectURL(preview)
-                  : `${user.image}`
-              }
+              src={preview ? URL.createObjectURL(preview) : `${user.image}`}
               alt={user.name}
               width="40px"
             />
@@ -143,14 +139,10 @@ function Profile() {
             value={user.confirmPassword || ''}
           />
           <Container
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              padding: '40px',
-            }}
+            className="col-6 col-md-4 col-sm-2"
+            style={{ padding: '40px' }}
           >
-            <Button type="submit" contentButton="Editar" />
+            <Button type="submit" contentButton="Salvar" />
           </Container>
         </Container>
       </form>

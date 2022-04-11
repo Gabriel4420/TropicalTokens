@@ -7,3 +7,9 @@ export const TitleArea = styled.div`
   justify-content: center;
   padding: 5%;
 `
+
+export const ArtsArea = styled.div`
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+`

@@ -5,7 +5,7 @@ import { Title } from '../../components/atoms/Texts'
 
 /* contexts */
 import { Context } from '../../contexts/UserContext'
-import { Container } from 'reactstrap'
+import { Button, Container } from 'reactstrap'
 
 const Register = () => {
   /* use States & useContext */
@@ -21,48 +21,68 @@ const Register = () => {
   return (
     <Container>
       <Title>Registrar</Title>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} autocomplete="no">
         <Input
           type="text"
           name="name"
           placeholder="Digite o seu nome"
           handleOnChange={handleChange}
+          autocomplete="no"
         />
         <Input
           type="text"
           name="wallet"
           placeholder="Digite sua Wallet"
           handleOnChange={handleChange}
+          autocomplete="no"
         />
         <Input
           type="email"
           name="email"
           placeholder="Digite o seu e-mail"
           handleOnChange={handleChange}
+          autocomplete="no"
         />
         <Input
           type="email"
           name="confirmemail"
           placeholder="Confirme seu email"
           handleOnChange={handleChange}
+          autocomplete="no"
         />
         <Input
           type="password"
           name="password"
           placeholder="Digite a sua senha"
           handleOnChange={handleChange}
+          autocomplete="no"
         />
         <Input
           type="password"
           name="confirmPassword"
           placeholder="Confirme a sua senha"
           handleOnChange={handleChange}
+          autocomplete="no"
         />
-        <input type="submit" value="Cadastrar" />
+        <Container
+          className="col-6 col-sm-4 col-md-2"
+          style={{
+            padding: '20px',
+          }}
+        >
+          <Button color="primary" type="submit">
+            Cadastrar
+          </Button>
+        </Container>
       </form>
-      <p>
-        Já tem conta? <Link to="/login">Clique aqui.</Link>
-      </p>
+      <Container className="col-6 col-sm-4 col-md-2">
+        <p>
+          Já tem conta?{' '}
+          <Link style={{ fontWeight: 'bold' }} to="/login">
+            Clique aqui.
+          </Link>
+        </p>
+      </Container>
     </Container>
   )
 }

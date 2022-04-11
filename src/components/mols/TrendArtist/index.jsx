@@ -28,9 +28,9 @@ const TrendArtist = () => {
   return (
     <TrendArtistContainer>
       {data
-        .filter((item) => item.title === 'Praia Modesta')
+        .filter((item) => item.title === 'Galaxia')
         .map((item, key) => {
-          const { title, images, user } = item
+          const { title, image, user } = item
           return (
             <div key={key}>
               <div className="TitleArt">
@@ -38,10 +38,8 @@ const TrendArtist = () => {
               </div>
               <Header>
                 <TrendNftArea>
-                  {images ? (
-                    <TrendNft
-                      src={`${process.env.REACT_APP_API}/images/arts/${images[key]}`}
-                    />
+                  {image ? (
+                    <TrendNft src={`${image}`} />
                   ) : (
                     <TrendNft src={`/images/leo.png`} />
                   )}
