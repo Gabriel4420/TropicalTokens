@@ -52,6 +52,20 @@ const ArtForm = ({ handleSubmit, artData, btnText }) => {
         value={art.title || ''}
       />
       <Input
+        type="text"
+        name="urlipfs"
+        placeholder="Digite a url do ipfs"
+        handleOnChange={handleChange}
+        value={art.urlipfs || ''}
+      />
+      <Input
+        type="text"
+        name="urlcertificadotoken"
+        placeholder="Digite o url do certificado de token pela hathor ou waves"
+        handleOnChange={handleChange}
+        value={art.urlcertificadotoken || ''}
+      />
+      <Input
         type="number"
         name="quantityavailable"
         placeholder="Digite a quantidade de obras que serão cadastradas"

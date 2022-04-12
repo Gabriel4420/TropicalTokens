@@ -35,7 +35,9 @@ const AddArt = () => {
         },
       })
       .then((response) => {
-        return response.data
+        const { data } = response
+        console.log(data)
+        return data
       })
       .catch((err) => {
         msgType = 'error'
