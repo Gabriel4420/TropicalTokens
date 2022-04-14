@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Header = styled.div`
   display: flex;
-  
+
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -40,11 +40,13 @@ export const TicketArtistArea = styled.div`
   display: flex;
   width: 100%;
   padding: 10px;
+  margin-left: 50px;
   align-items: center;
   justify-content: center;
 
-  @media screen(max-width:768px) {
+  @media screen(min-width:768px) {
     padding: 0;
+    margin: 0;
   }
 `
 

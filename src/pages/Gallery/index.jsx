@@ -29,6 +29,7 @@ const Gallery = () => {
                   flexDirection: 'column',
                   alignItems: 'center',
                 }}
+                key={index}
               >
                 <RoundedImage src={image}></RoundedImage>
                 <span>{title}</span>

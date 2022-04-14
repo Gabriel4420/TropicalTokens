@@ -22,7 +22,7 @@ const TicketArtistName = ({ titleArtist, createBy, titleArt }) => {
           },
         })
         .then((response) => {
-          console.log(response)
+         
           setData(response.data.arts)
         })
     }
@@ -37,12 +37,12 @@ const TicketArtistName = ({ titleArtist, createBy, titleArt }) => {
         {data
           .filter((item) => item.title == 'Gabriel Rodrigues Perez')
           .map((item, index) => {
-            const { image } = item
-
+            const { user } = item
+          
             return (
               <TrendAvatarArea key={index}>
-                {image ? (
-                  <UserAvatar src={`${image}`} />
+                {user ? (
+                  <UserAvatar src={`${user.image}`} />
                 ) : (
                   <UserAvatar src={`/images/leo.png`} />
                 )}

@@ -1,8 +1,13 @@
 import React, { useState, useRef, useEffect } from 'react'
+
 import api from '../../utils/api'
+
 import '@fontsource/playfair-display'
+
 import TrendArtist from '../../components/mols/TrendArtist'
+
 import { Col } from 'reactstrap'
+
 import {
   AboutArea,
   LogoAboutArea,
@@ -10,7 +15,9 @@ import {
   CarrouselSection,
   TrendArtistArea,
 } from './styles'
+
 import Carrousel from '../../components/organism/Carrousel'
+
 import Carousel from 'react-elastic-carousel'
 
 const Home = () => {
@@ -22,12 +29,12 @@ const Home = () => {
   useEffect(() => {
     const fetchData = async () => {
       await api.get('/arts').then((response) => {
-  
         setData(response.data.arts)
       })
     }
     fetchData()
   }, [data])
+
   return (
     <>
       <TrendArtistArea>
@@ -59,11 +66,7 @@ const Home = () => {
               return (
                 <Carrousel
                   title={title}
-                  artPath={
-                    image
-                      ? `${image}`
-                      : '/images/leo.png'
-                  }
+                  artPath={image ? `${image}` : '/images/leo.png'}
                   quantityAvailable={quantityavailable}
                   carrouselRef={carrouselRef}
                   key={key}

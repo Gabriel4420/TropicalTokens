@@ -19,9 +19,9 @@ const ArtForm = ({ handleSubmit, artData, btnText }) => {
   const submit = (e) => e.preventDefault() + handleSubmit(art)
 
   return (
-    <form onSubmit={submit}>
+    <form encType="multipart/form-data" onSubmit={submit}>
       <Container>
-        {art.images && (
+        {art.image && (
           <Container
             style={{
               display: 'flex',
@@ -39,8 +39,8 @@ const ArtForm = ({ handleSubmit, artData, btnText }) => {
         )}
       </Container>
       <Input
-        placeholder="Anexa suas artes"
-        name="images"
+        placeholder="Anexa sua artes"
+        name="image"
         type="file"
         handleOnChange={onFileChange}
       />

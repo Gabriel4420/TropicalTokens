@@ -3,10 +3,10 @@ import styled from 'styled-components'
 export const Container = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   cursor: pointer;
   width: 100%;
-  max-width: 300px;
+  max-width: 200px;
   heigth: 65px;
   border-radius: 80px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
@@ -34,9 +34,18 @@ export const UsernameTittleArea = styled.div`
   margin-left: -150px;
   margin-top: 10px;
 
+  a {
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
   h3 {
     font-weight: bold;
     font-size: 16px;
+    margin-left: 180px;
+    color: black;
   }
 
   h3:hover {
@@ -45,6 +54,9 @@ export const UsernameTittleArea = styled.div`
 
   @media (min-width: 200px) and (max-width: 600px) {
     margin-left: -30px;
+    h3 {
+      margin-left: 50px;
+    }
   }
 `
 
