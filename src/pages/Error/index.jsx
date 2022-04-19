@@ -1,13 +1,17 @@
 //internal e external libs
 import React from 'react'
 import { Link } from 'react-router-dom'
-/* Custom font*/
+
+// Custom Font
+
 import '@fontsource/playfair-display'
 
-/* Bootstap Style */
+// Bootstrap Dist
+
 import 'bootstrap/dist/css/bootstrap.css'
 
 //internal styles
+
 import { Content, Page } from './style'
 
 //Begin Component

@@ -32,7 +32,7 @@ const Home = () => {
 
   const carrouselRef = useRef(null)
 
-  /* States */
+  // States
 
   const [data, setData] = useState([])
   useEffect(() => {
