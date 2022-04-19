@@ -23,7 +23,7 @@ const AddArt = () => {
       formData.append(key, art[key]),
     )
 
-    console.log(artFormData)
+   
 
     formData.append('arts', artFormData)
 
@@ -36,7 +36,6 @@ const AddArt = () => {
       })
       .then((response) => {
         const { data } = response
-        console.log(data)
         return data
       })
       .catch((err) => {

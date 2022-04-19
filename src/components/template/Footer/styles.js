@@ -1,9 +1,10 @@
 import styled from 'styled-components'
 
 export const Container = styled.footer`
-  
   display: flex;
   color: white;
+  position: relative;
+  
   align-items: center;
   justify-content: space-between;
   width: 100%;

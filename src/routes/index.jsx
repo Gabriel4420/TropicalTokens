@@ -15,10 +15,13 @@ import Register from '../pages/Register'
 import Profile from '../pages/Profile'
 import Admin from '../pages/Admin'
 import { BsBrush } from 'react-icons/bs'
+import { GrGallery } from 'react-icons/gr'
 import MenuItem from '../components/organism/MenuItem'
 import { Menu } from '../components/organism/MenuVertical'
 import { PageBody } from '../components/template/PageBody'
 import RegisterArt from '../pages/RegisterArt'
+import MyArts from '../pages/MyArts'
+import ArtDetails from '../pages/ArtDetails'
 const Routers = () => {
   return (
     <BrowserRouter>
@@ -39,8 +42,11 @@ const Routers = () => {
                   {' '}
                   <PageBody>
                     <Menu>
-                      <MenuItem title="arts" link="/registerArt">
+                      <MenuItem title="cadastrar artes" link="/registerArt">
                         <BsBrush color="white" />
+                      </MenuItem>
+                      <MenuItem title="minhas artes" link="/myarts">
+                        <GrGallery color="white" />
                       </MenuItem>
                     </Menu>
                     <ReactToolTip id="tip-top" place="top" effect="solid" />
@@ -58,8 +64,11 @@ const Routers = () => {
                   {' '}
                   <PageBody>
                     <Menu>
-                      <MenuItem title="arts" link="/myarts">
+                      <MenuItem title="cadastrar artes" link="/registerArt">
                         <BsBrush color="white" />
+                      </MenuItem>
+                      <MenuItem title="minhas artes" link="/myarts">
+                        <GrGallery color="white" />
                       </MenuItem>
                     </Menu>
                     <ReactToolTip id="tip-top" place="top" effect="solid" />
@@ -69,11 +78,33 @@ const Routers = () => {
                 </>
               }
             ></Route>
-
+            <Route
+              exact
+              path="/myarts"
+              element={
+                <>
+                  {' '}
+                  <PageBody>
+                    <Menu>
+                      <MenuItem title="cadastrar artes" link="/registerArt">
+                        <BsBrush color="white" />
+                      </MenuItem>
+                      <MenuItem title="minhas artes" link="/myarts">
+                        <GrGallery color="white" />
+                      </MenuItem>
+                    </Menu>
+                    <ReactToolTip id="tip-top" place="top" effect="solid" />
+                    <ReactToolTip id="tip-right" place="right" effect="solid" />
+                    <MyArts />
+                  </PageBody>
+                </>
+              }
+            ></Route>
             <Route exact path="/register" element={<Register />}></Route>
             <Route exact path="/profile" element={<Profile />}></Route>
             <Route exact path="/users" element={<Users />}></Route>
             <Route exact path="/gallery" element={<Gallery />}></Route>
+            <Route exact path="/art/:id" element={<ArtDetails/>}></Route>
           </Routes>
           <Footer />
         </UserProvider>

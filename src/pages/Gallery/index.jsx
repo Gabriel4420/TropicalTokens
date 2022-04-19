@@ -31,7 +31,7 @@ const Gallery = () => {
                 }}
                 key={index}
               >
-                <RoundedImage src={image}></RoundedImage>
+                <img src={image} width="300" height="220" alt={title}></img>
                 <span>{title}</span>
               </Container>
             )

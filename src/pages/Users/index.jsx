@@ -34,7 +34,7 @@ const Users = () => {
           <thead className="table-dark">
             <tr>
               <th>Collectors</th>
-              <th>Collections</th>
+              <th>Items</th>
             </tr>
           </thead>
           <tbody>
@@ -44,7 +44,9 @@ const Users = () => {
               return (
                 <tr key={index}>
                   <td>{name}</td>
-                  <td>{arts.length}</td>
+                  <td>
+                    {arts.filter((item) => item.available === true).length}
+                  </td>
                 </tr>
               )
             })}

@@ -16,13 +16,8 @@ const TicketArtistName = ({ titleArtist, createBy, titleArt }) => {
   useEffect(() => {
     const fetchData = async () => {
       await api
-        .get(`arts/myarts`, {
-          headers: {
-            Authorization: `Bearer ${JSON.parse(token)}`,
-          },
-        })
+        .get(`arts/`)
         .then((response) => {
-         
           setData(response.data.arts)
         })
     }
@@ -34,21 +29,19 @@ const TicketArtistName = ({ titleArtist, createBy, titleArt }) => {
     <Background createBy={createBy}>
       <h3>{createBy}</h3>
       <Container>
-        {data
-          .filter((item) => item.title == 'Gabriel Rodrigues Perez')
-          .map((item, index) => {
-            const { user } = item
-          
-            return (
-              <TrendAvatarArea key={index}>
-                {user ? (
-                  <UserAvatar src={`${user.image}`} />
-                ) : (
-                  <UserAvatar src={`/images/leo.png`} />
-                )}
-              </TrendAvatarArea>
-            )
-          })}
+        {data.map((item, index) => {
+          const { user } = item
+        
+          return (
+            <TrendAvatarArea key={index}>
+              {user ? (
+                <UserAvatar src={user.image} />
+              ) : (
+                <UserAvatar src={`/images/leo.png`} />
+              )}
+            </TrendAvatarArea>
+          )
+        })}
         <UsernameTittleArea titleArtist={titleArtist}>
           <Link to="/profile">
             <h3>{titleArtist}</h3>

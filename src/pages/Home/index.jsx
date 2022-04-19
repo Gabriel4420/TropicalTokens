@@ -4,6 +4,8 @@ import api from '../../utils/api'
 
 import '@fontsource/playfair-display'
 
+import { Link } from 'react-router-dom'
+
 import TrendArtist from '../../components/mols/TrendArtist'
 
 import { Col } from 'reactstrap'
@@ -64,14 +66,16 @@ const Home = () => {
               const { title, image, quantityavailable, description } = item
 
               return (
-                <Carrousel
-                  title={title}
-                  artPath={image ? `${image}` : '/images/leo.png'}
-                  quantityAvailable={quantityavailable}
-                  carrouselRef={carrouselRef}
-                  key={key}
-                  description={description}
-                />
+                <Link to={`art/${item._id}`}>
+                  <Carrousel
+                    title={title}
+                    artPath={image ? `${image}` : '/images/leo.png'}
+                    quantityAvailable={quantityavailable}
+                    carrouselRef={carrouselRef}
+                    key={key}
+                    description={description}
+                  />
+                </Link>
               )
             })}
           </Carousel>

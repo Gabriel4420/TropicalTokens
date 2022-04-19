@@ -6,13 +6,13 @@ export const Container = styled.div`
   justify-content: space-between;
   cursor: pointer;
   width: 100%;
-  max-width: 200px;
+  max-width: 250px;
   heigth: 65px;
   border-radius: 80px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 
   @media (min-width: 300px) and (max-width: 600px) {
-    max-width: 200px;
+    width: 400px;
   }
 
   @media (min-width: 600px) and (max-width: 1024px) {
@@ -31,7 +31,7 @@ export const UsernameTittleArea = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  margin-left: -150px;
+  margin-left: -100px;
   margin-top: 10px;
 
   a {
@@ -44,7 +44,7 @@ export const UsernameTittleArea = styled.div`
   h3 {
     font-weight: bold;
     font-size: 16px;
-    margin-left: 180px;
+    margin-left: 0px;
     color: black;
   }
 
@@ -53,16 +53,16 @@ export const UsernameTittleArea = styled.div`
   }
 
   @media (min-width: 200px) and (max-width: 600px) {
-    margin-left: -30px;
+   
     h3 {
-      margin-left: 50px;
+      margin-left: 0px;
     }
   }
 `
 
 export const Background = styled.div`
   width: 100%;
-  @media (min-width: 300px) and (max-width: 600px) {
+  @media (min-width: 300px) and (max-width: 1024px) {
     width: 100%;
     display: flex;
     flex-direction: column;

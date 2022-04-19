@@ -7,4 +7,5 @@ export const Menu = styled.div`
   align-items: center;
   background-color: rgba(19, 103, 19, 0.5);
   width: 80px;
+  height: 100vh;
 `

@@ -28,7 +28,7 @@ const TrendArtist = () => {
   return (
     <TrendArtistContainer>
       {data
-        .filter((item) => item.title === 'Galaxia')
+        .filter((item) => item.title === 'Sasuke')
         .map((item, key) => {
           const { title, image, user } = item
           return (
@@ -38,11 +38,7 @@ const TrendArtist = () => {
               </div>
               <Header>
                 <TrendNftArea>
-                  {image ? (
-                    <TrendNft src={`${image}`} />
-                  ) : (
-                    <TrendNft src={`/images/leo.png`} />
-                  )}
+                  <TrendNft src={image} />
                 </TrendNftArea>
                 <TicketArtistArea>
                   <TicketArtistName

@@ -2,7 +2,7 @@ import { useState, useContext } from 'react'
 import Input from '../../components/atoms/Input'
 import { Link } from 'react-router-dom'
 import { Title } from '../../components/atoms/Texts'
-
+import { FaAppStoreIos, FaGooglePlay } from 'react-icons/fa'
 /* contexts */
 import { Context } from '../../contexts/UserContext'
 import { Button, Container } from 'reactstrap'
@@ -32,7 +32,7 @@ const Register = () => {
         <Input
           type="text"
           name="wallet"
-          placeholder="Digite sua Wallet"
+          placeholder="Digite sua endereço de wallet"
           handleOnChange={handleChange}
           autocomplete="no"
         />
@@ -81,6 +81,58 @@ const Register = () => {
           <Link style={{ fontWeight: 'bold' }} to="/login">
             Clique aqui.
           </Link>
+          <Container
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              marginTop: '20px',
+            }}
+          >
+            <div style={{ marginRight: '20px' }}>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://apps.apple.com/us/app/hathor-wallet/id1465041963"
+                style={{ textDecoration: 'none' }}
+              >
+                <Button
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    width: '300px',
+                    fontWeight: 'bold',
+                  }}
+                >
+                  <FaAppStoreIos size={43} style={{ marginRight: '10px' }} />
+                  Download Hathor Wallet on Apple Store
+                </Button>
+              </a>
+            </div>
+            <div style={{ marginRight: '20px' }}>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://play.google.com/store/apps/details?id=network.hathor.wallet&hl=pt_BR&gl=US"
+                style={{ textDecoration: 'none' }}
+              >
+                <Button
+                  color="success"
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    width: '300px',
+                    fontWeight: 'bold',
+                  }}
+                >
+                  <FaGooglePlay size={43} style={{ marginRight: '10px' }} />
+                  Download Hathor Wallet on GooglePlay
+                </Button>
+              </a>
+            </div>
+          </Container>
         </p>
       </Container>
     </Container>
