@@ -1,16 +1,33 @@
-import React, { useEffect, useState } from 'react'
-import api from '../../utils/api'
-import { SearchArea, TableArea } from './styles'
-import Input from '../../components/atoms/Input'
-import { Title } from '../../components/atoms/Texts'
+//Bootstrap Dist
+
 import 'bootstrap/dist/css/bootstrap.css'
+
+//Internal & external libs
+
+import React, { useEffect, useState } from 'react'
 import { Table } from 'reactstrap'
 import { FcSearch } from 'react-icons/fc'
 
+//Internal Styles
+
+import { SearchArea, TableArea } from './styles'
+
+//Components, Hooks, Utils and Contexts
+
+import api from '../../utils/api'
+import Input from '../../components/atoms/Input'
+import { Title } from '../../components/atoms/Texts'
+
+//Begin Component
+
 const Users = () => {
+  //States
+
   const [users, setUsers] = useState([])
   const [token] = useState(localStorage.getItem('token'))
   let authors = []
+
+  //Effects
 
   useEffect(() => {
     const fetchData = () => {

@@ -1,17 +1,25 @@
+//Internal & external libs
+
 import { useState, useContext } from 'react'
-import Input from '../../components/atoms/Input'
 import { Link } from 'react-router-dom'
-import { Title } from '../../components/atoms/Texts'
-import { FaAppStoreIos, FaGooglePlay } from 'react-icons/fa'
-/* contexts */
-import { Context } from '../../contexts/UserContext'
 import { Button, Container } from 'reactstrap'
+import { FaAppStoreIos, FaGooglePlay } from 'react-icons/fa'
+
+//Components, Hooks, Utils and Contexts
+
+import { Title } from '../../components/atoms/Texts'
+import Input from '../../components/atoms/Input'
+import { Context } from '../../contexts/UserContext'
+
+//Begin Component
 
 const Register = () => {
-  /* use States & useContext */
+  //States
 
   const [user, setUser] = useState({})
   const { register } = useContext(Context)
+
+  //Handles
 
   const handleChange = (e) =>
     setUser({ ...user, [e.target.name]: e.target.value })

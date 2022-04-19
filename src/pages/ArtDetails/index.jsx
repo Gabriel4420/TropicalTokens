@@ -1,16 +1,22 @@
-import api from '../../utils/api'
-
+//Internal & external libs
 import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 
-/* hooks */
+//Components, Hooks, Utils and Contexts
 import useFlashMessage from '../../hooks/useFlashMessage'
+import api from '../../utils/api'
+
+//Begin Component
 
 const ArtDetails = () => {
+  //States
+
   const [art, setArt] = useState({})
   const { id } = useParams()
   const { setFlashMessage } = useFlashMessage()
   const [token] = useState(localStorage.getItem('token'))
+
+  //Effects
 
   useEffect(() => {
     const fetchData = () => {

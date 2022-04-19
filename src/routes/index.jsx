@@ -1,7 +1,18 @@
+//external and internal libs
 import React from 'react'
 import ReactToolTip from 'react-tooltip'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BsBrush } from 'react-icons/bs'
+import { GrGallery } from 'react-icons/gr'
+
+//pages
 import Home from '../pages/Home'
+import RegisterArt from '../pages/RegisterArt'
+import MyArts from '../pages/MyArts'
+import ArtDetails from '../pages/ArtDetails'
+import Register from '../pages/Register'
+import Profile from '../pages/Profile'
+import Admin from '../pages/Admin'
 import Error404 from '../pages/Error'
 import Login from '../pages/Login'
 import Users from '../pages/Users'
@@ -11,17 +22,13 @@ import Footer from '../components/template/Footer'
 import Container from '../components/template/Container'
 import { UserProvider } from '../contexts/UserContext'
 import FlashMessages from '../components/organism/FlashMessages'
-import Register from '../pages/Register'
-import Profile from '../pages/Profile'
-import Admin from '../pages/Admin'
-import { BsBrush } from 'react-icons/bs'
-import { GrGallery } from 'react-icons/gr'
+
+//componentes
 import MenuItem from '../components/organism/MenuItem'
 import { Menu } from '../components/organism/MenuVertical'
 import { PageBody } from '../components/template/PageBody'
-import RegisterArt from '../pages/RegisterArt'
-import MyArts from '../pages/MyArts'
-import ArtDetails from '../pages/ArtDetails'
+
+
 const Routers = () => {
   return (
     <BrowserRouter>

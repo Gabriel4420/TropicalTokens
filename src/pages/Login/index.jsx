@@ -1,17 +1,30 @@
-import React, { useState, useContext } from 'react'
+//Fonts
 import '@fontsource/playfair-display'
 
+//Bootstrap dist
+
 import 'bootstrap/dist/css/bootstrap.css'
+
+//Internal & external libs
+
+import React, { useState, useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { Form, Container } from 'reactstrap'
 
-import { Context } from '../../contexts/UserContext'
+//Intern Styles
+
 import * as C from './styles'
 
+//Components, Hooks, Utils and Contexts
+import { Context } from '../../contexts/UserContext'
 import Input from '../../components/atoms/Input'
 import Button from '../../components/atoms/Button'
 
+//Begin Component
+
 const Login = () => {
+  //States
+
   const [user, setUser] = useState({})
   const { login } = useContext(Context)
 

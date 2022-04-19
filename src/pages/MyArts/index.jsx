@@ -1,20 +1,30 @@
-import api from '../../utils/api'
+//Internal & external libs
 
 import { Link, useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
-import { ArtListContainer, ArtListRow, Action } from './styles'
-import RoundedImage from '../../components/atoms/RoundedImage'
-
-/* hooks */
-import useFlashMessage from '../../hooks/useFlashMessage'
 import { Button, Container } from 'reactstrap'
 
+//Intern Styles
+
+import { ArtListContainer, ArtListRow, Action } from './styles'
+
+//Components, Hooks, Utils and Contexts
+
+import api from '../../utils/api'
+import RoundedImage from '../../components/atoms/RoundedImage'
+import useFlashMessage from '../../hooks/useFlashMessage'
+
+//Begin Component
+
 const MyArts = () => {
+  //States
   const [arts, setArts] = useState([])
   const [token] = useState(localStorage.getItem('token') || '')
   const { setFlashMessage } = useFlashMessage()
 
   const navigate = useNavigate()
+
+  //Effects
 
   useEffect(() => {
     api
@@ -27,6 +37,8 @@ const MyArts = () => {
         setArts(response.data.arts)
       })
   }, [token])
+
+  //Handles
 
   const removeArt = async (id) => {
     let msgType = 'success'

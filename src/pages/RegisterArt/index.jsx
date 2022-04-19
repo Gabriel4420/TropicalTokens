@@ -1,13 +1,16 @@
-import api from '../../utils/api'
+//Internal & external libs
 
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { Container } from 'reactstrap'
 
+//Components, Hooks, Utils and Contexts
+
+import useFlashMessage from '../../hooks/useFlashMessage'
+import api from '../../utils/api'
 import ArtForm from '../../components/organism/ArtForm'
 
-/* hooks */
-import useFlashMessage from '../../hooks/useFlashMessage'
-import { Container } from 'reactstrap'
+//Begin Component
 
 const AddArt = () => {
   const [token] = useState(localStorage.getItem('token'))
@@ -22,8 +25,6 @@ const AddArt = () => {
     const artFormData = await Object.keys(art).forEach((key) =>
       formData.append(key, art[key]),
     )
-
-   
 
     formData.append('arts', artFormData)
 

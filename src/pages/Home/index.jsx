@@ -1,14 +1,21 @@
-import React, { useState, useRef, useEffect } from 'react'
+//Internal & External libs
 
-import api from '../../utils/api'
+import React, { useState, useRef, useEffect } from 'react'
+import Carousel from 'react-elastic-carousel'
+import { Link } from 'react-router-dom'
+import { Col } from 'reactstrap'
+
+//Fonts externals and internals
 
 import '@fontsource/playfair-display'
 
-import { Link } from 'react-router-dom'
+//Components, Hooks, Utils and Contexts
 
+import api from '../../utils/api'
 import TrendArtist from '../../components/mols/TrendArtist'
+import Carrousel from '../../components/organism/Carrousel'
 
-import { Col } from 'reactstrap'
+//Internal Styles
 
 import {
   AboutArea,
@@ -18,14 +25,14 @@ import {
   TrendArtistArea,
 } from './styles'
 
-import Carrousel from '../../components/organism/Carrousel'
-
-import Carousel from 'react-elastic-carousel'
+//Begin Component
 
 const Home = () => {
+  //Refs
+
   const carrouselRef = useRef(null)
 
-  /*  */
+  /* States */
 
   const [data, setData] = useState([])
   useEffect(() => {

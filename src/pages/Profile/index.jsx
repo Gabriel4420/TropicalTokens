@@ -1,22 +1,28 @@
-import api from '../../utils/api'
+//Internal & external libs
 
+import { useState, useEffect } from 'react'
+import { Container } from 'reactstrap'
+
+//Components, Hooks, Utils and Contexts
+
+import useFlashMessage from '../../hooks/useFlashMessage'
+import RoundedImage from '../../components/atoms/RoundedImage'
+import api from '../../utils/api'
 import Input from '../../components/atoms/Input'
 import Button from '../../components/atoms/Button'
 import { Title } from '../../components/atoms/Texts'
-import { useState, useEffect } from 'react'
 
-/* hooks */
-import useFlashMessage from '../../hooks/useFlashMessage'
-import RoundedImage from '../../components/atoms/RoundedImage'
-import { Container } from 'reactstrap'
+//Begin Component
 
-function Profile() {
-  //states
+const Profile = () => {
+  //States
+
   const [user, setUser] = useState({})
   const [preview, setPreview] = useState()
   const [token] = useState(localStorage.getItem('token'))
   const { setFlashMessage } = useFlashMessage()
-  //effects
+
+  //Effects
   useEffect(() => {
     const fetchData = () => {
       api
@@ -31,7 +37,8 @@ function Profile() {
     }
     fetchData()
   }, [token])
-  //handles
+
+  //Handles
   const handleChange = (e) =>
     setUser({ ...user, [e.target.name]: e.target.value })
 
@@ -63,11 +70,9 @@ function Profile() {
         return response.data
       })
       .catch((err) => {
-      
         msgType = 'error'
         return err.response.data
       })
-  
 
     setFlashMessage(data.message, msgType)
   }

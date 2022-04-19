@@ -1,6 +1,13 @@
+//Internal & external libs
+
 import React from 'react'
 import { Container } from 'reactstrap'
+
+//Components, Hooks, Utils and Contexts
+
 import { Title } from '../../components/atoms/Texts'
+
+//Begin Component
 
 const Admin = () => {
   return (

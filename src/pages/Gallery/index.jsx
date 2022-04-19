@@ -1,11 +1,22 @@
+//Internal e External libs
+
 import React, { useState, useEffect } from 'react'
+import { Container } from 'reactstrap'
+
+//Components, Hooks, Utils and Contexts
+
 import api from '../../utils/api'
 import { Title } from '../../components/atoms/Texts'
-import { Container } from 'reactstrap'
-import RoundedImage from '../../components/atoms/RoundedImage'
+
+//Internal Styles
+
 import * as C from './styles'
 
+//Begin Component
+
 const Gallery = () => {
+  //States
+
   const [data, setData] = useState([])
   useEffect(() => {
     const fetchData = async () => {
